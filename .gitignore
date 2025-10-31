@@ -1,0 +1,30 @@
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+out/
+
+# --- Eclipse ---
+.classpath
+.project
+.settings/
+bin/
+
+# --- NetBeans ---
+nbproject/
+build/
+nbbuild/
+dist/
+
+# --- VS Code ---
+.vscode/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Java ---
+*.class
+*.log
+*.jar
+*.war
+*.ear
