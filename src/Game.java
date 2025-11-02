@@ -28,21 +28,7 @@ public class Game {
     public static void mainMenu(Farm farm, ArrayList<Crop> available, Player player, Calendar calendar) {
         while (true) {
             Scanner input = new Scanner(System.in);
-            System.out.println();
-            System.out.println("--- [ Day " + calendar.getDay() + " of " + calendar.getSeason() + " ] ---------");
-            System.out.println(player.getName() + ": " + player.getMoney() + " coins");
-            System.out.println();
-            System.out.println("Options:");
-            System.out.println("1. Check plots");
-            System.out.println("2. Advance day");
-            System.out.println("3. Water");
-            System.out.println("4. Plant");
-            System.out.println("5. Harvest");
-            System.out.println("6. Sell");
-            System.out.println("7. List inventory");
-            System.out.println("8. Crop catalogue");
-            System.out.println("0. Exit");
-            System.out.print("> ");
+            printMenu(player, calendar);
 
             ArrayList<Plot> allPlots = farm.getAllPlots();
             ArrayList<Plot> emptyPlots = getEmptyPlots(farm);
@@ -110,6 +96,7 @@ public class Game {
                         int quantity = input.nextInt();
                         sellItem(player, itemName, quantity);
                     case 7:
+                        System.out.println();
                         player.listItems();
                         break;
                     case 8:
@@ -121,6 +108,24 @@ public class Game {
                 input.nextLine();
             }
         }
+    }
+
+    public static void printMenu(Player player, Calendar calendar) {
+        System.out.println();
+        System.out.println("--- [ Day " + calendar.getDay() + " of " + calendar.getSeason() + " ] ---------");
+        System.out.println(player.getName() + ": " + player.getMoney() + " coins");
+        System.out.println();
+        System.out.println("Options:");
+        System.out.println("1. Check plots");
+        System.out.println("2. Advance day");
+        System.out.println("3. Water");
+        System.out.println("4. Plant");
+        System.out.println("5. Harvest");
+        System.out.println("6. Sell");
+        System.out.println("7. List inventory");
+        System.out.println("8. Crop catalogue");
+        System.out.println("0. Exit");
+        System.out.print("> ");
     }
 
     public static void listCrops() {
