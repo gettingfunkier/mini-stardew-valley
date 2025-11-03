@@ -80,6 +80,7 @@ public class Game {
                             System.out.print("Plot: ");
                             int plotID = input.nextInt();
                             farm.plantCrop(plotID, available.get(cropID - 1));
+                            break;
                         }
                         System.out.println("(I thought of that)");
                         break;
