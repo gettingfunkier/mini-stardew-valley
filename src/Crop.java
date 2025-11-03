@@ -3,19 +3,22 @@ public class Crop {
     private int daysToGrow;
     private int currentDay;
     private int value;
+    private String season;
 
-    public Crop(String name, int daysToGrow, int value) {
+    public Crop(String name, int daysToGrow, int value, String season) {
         this.name = name;
         this.daysToGrow = daysToGrow;
         this.value = value;
         this.currentDay = 0;
+        this.season = season;
     }
 
     public Crop(Crop other) {
         this.name = other.name;
         this.daysToGrow = other.daysToGrow;
         this.value = other.value;
-        this.currentDay = 0; // fresh plant
+        this.currentDay = 0;
+        this.season = other.season;
     }
 
     public String getName() {
@@ -28,6 +31,10 @@ public class Crop {
 
     public int getDaysToGrow() {
         return daysToGrow;
+    }
+
+    public String getSeason() {
+        return season;
     }
 
     public int getCurrentDay() {

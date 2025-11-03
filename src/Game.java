@@ -26,12 +26,18 @@ public class Game {
     }
 
     public static void mainMenu(Farm farm, ArrayList<Crop> available, Player player, Calendar calendar) {
+        String season = calendar.getSeason();
         while (true) {
             Scanner input = new Scanner(System.in);
             printMenu(player, calendar);
 
             ArrayList<Plot> allPlots = farm.getAllPlots();
             ArrayList<Plot> emptyPlots = getEmptyPlots(farm);
+
+            if (!calendar.getSeason().equals(season)) {
+                changeSeason(farm);
+                season = calendar.getSeason();
+            }
 
             try {
                 int action = input.nextInt();
@@ -62,16 +68,20 @@ public class Game {
                         break;
                     case 4:
                         System.out.println();
-                        listCrops();
+                        listSeasonCrops(calendar);
+                        System.out.println();
                         if (!listAvailablePlots(emptyPlots)) {
                             break;
                         }
                         System.out.println();
                         System.out.print("Crop: ");
                         int cropID = input.nextInt();
-                        System.out.print("Plot: ");
-                        int plotID = input.nextInt();
-                        farm.plantCrop(plotID, available.get(cropID - 1));
+                        if (checkCropSeason(cropID, calendar, available)) {
+                            System.out.print("Plot: ");
+                            int plotID = input.nextInt();
+                            farm.plantCrop(plotID, available.get(cropID - 1));
+                        }
+                        System.out.println("(I thought of that)");
                         break;
                     case 5:
                         System.out.println("Choose a crop:");
@@ -100,10 +110,13 @@ public class Game {
                         player.listItems();
                         break;
                     case 8:
+                        System.out.println();
                         listCrops();
                         break;
                 }
-            } catch (Exception e) {
+            }
+
+            catch (Exception e) {
                 System.out.println("Invalid input!");
                 input.nextLine();
             }
@@ -128,13 +141,38 @@ public class Game {
         System.out.print("> ");
     }
 
+    public static void changeSeason(Farm farm) {
+        farm.clearAllPlots();
+    }
+
+    public static boolean checkCropSeason(int cropID, Calendar calendar, ArrayList<Crop> available) {
+        Crop crop = available.get(cropID - 1);
+        if (calendar.getSeason().equals(crop.getSeason())) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void listSeasonCrops(Calendar calendar) {
+        ArrayList<Crop> available = getCropsList();
+        String season = calendar.getSeason();
+        System.out.println("Available Crops:");
+
+        for (int i = 0; i < available.size(); i++) {
+            if (season.equals(available.get(i).getSeason())) {
+                Crop crop = available.get(i);
+                System.out.println((i + 1) + ". " + crop.getName() + " (" + crop.getDaysToGrow() + " days)");
+            }
+        }
+    }
+
     public static void listCrops() {
         ArrayList<Crop> available = getCropsList();
         System.out.println("Available Crops:");
 
         for (int i = 0; i < available.size(); i++) {
             Crop crop = available.get(i);
-            System.out.println((i + 1) + ". " + crop.getName() + " (" + crop.getDaysToGrow() + " days)");
+            System.out.println(crop.getName() + " - Plant in the " + crop.getSeason() + ", takes " + crop.getDaysToGrow() + " days to grow");
         }
         System.out.println();
     }

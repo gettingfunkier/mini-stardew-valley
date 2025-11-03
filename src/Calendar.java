@@ -1,5 +1,5 @@
 public class Calendar {
-    String[] seasons = {"Spring", "Summer", "Autumn", "Winter"};
+    String[] seasons = {"Spring", "Summer", "Fall", "Winter"};
     private int day;
     private String season;
     private int seasonIndex;

@@ -42,11 +42,17 @@ public class Farm {
         return plots;
     }
 
-    public void plantCrop(int plotID, Crop cropTemplate) {
+    public void clearAllPlots() {
+        for (Plot plot : plots) {
+            plot.clearPlot();
+        }
+    }
+
+    public void plantCrop(int plotID, Crop crop) {
         Plot plot = getPlot(plotID);
 
         if (plot != null && plot.isEmpty()) {
-            Crop newCrop = new Crop(cropTemplate);
+            Crop newCrop = new Crop(crop);
             plot.plantCrop(newCrop);
             System.out.println("Planted " + newCrop.getName() + " on plot " + plotID);
         } else {
