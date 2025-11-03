@@ -133,7 +133,7 @@ Wheat - Plant in the Summer, takes 1 days to grow
 Cranberry - Plant in the Fall, takes 5 days to grow
 Eggplant - Plant in the Fall, takes 6 days to grow
 Pumpkin - Plant in the Fall, takes 11 days to grow
-Kale - Plant in the Fall, takes 5 days to grow
+Amaranth - Plant in the Fall, takes 5 days to grow
 Snowfruit - Plant in the Winter, takes 24 days to grow
 ```
 

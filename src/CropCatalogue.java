@@ -15,7 +15,7 @@ public class CropCatalogue {
         crops.add(new Crop("Cranberry", 5, 33, "Fall"));
         crops.add(new Crop("Eggplant", 6, 51, "Fall"));
         crops.add(new Crop("Pumpkin", 11, 161, "Fall"));
-        crops.add(new Crop("Kale", 5, 37, "Fall"));
+        crops.add(new Crop("Amaranth", 5, 37, "Fall"));
         crops.add(new Crop("Snowfruit", 24, 595, "Winter"));
     }
 
