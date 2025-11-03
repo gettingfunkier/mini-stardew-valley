@@ -85,7 +85,7 @@ public class Game {
                         System.out.println("(I thought of that)");
                         break;
                     case 5:
-                        System.out.println("Choose a crop:");
+                        System.out.println("Choose a plot:");
                         for (Plot plot : allPlots) {
                             if (plot.getCrop() != null) {
                                 if (plot.getCrop().isReadyToHarvest()) {
