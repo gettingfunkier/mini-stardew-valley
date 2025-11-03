@@ -15,11 +15,11 @@ Integrated concepts:
 1. Clone this repo: (or upload the src classes into a java project)
    ```bash
    git clone https://github.com/gettingfunkier/mini-stardew-valley.git
-   cd mini-stardew-valley
+   cd mini-stardew-valley/src
 2. Run with Java:
    ```bash
-   javac src/Game.java
-   java src/Game.java
+   javac Game.java
+   java Game.java
    ```
 
 ## How to play
