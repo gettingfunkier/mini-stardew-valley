@@ -58,11 +58,16 @@ public class Player {
         this.inventory.clear();
     }
 
-    public void listItems() {
+    public boolean listItems() {
+        if (inventory.isEmpty()) {
+            System.out.println("You have no items in your inventory");
+            return false;
+        }
         System.out.println("Inventory:");
         for (Item item : this.inventory) {
             System.out.println(item.getQuantity() + "x " + item.getName());
         }
+        return true;
     }
 
     public void sellItem(Item item) {
