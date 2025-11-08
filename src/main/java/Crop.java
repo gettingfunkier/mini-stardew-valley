@@ -1,3 +1,5 @@
+package main.java;
+
 public class Crop {
     private String name;
     private int daysToGrow;

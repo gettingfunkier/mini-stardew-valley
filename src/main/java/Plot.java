@@ -1,3 +1,5 @@
+package main.java;
+
 public class Plot {
     private int plotID;
     private boolean isWatered;

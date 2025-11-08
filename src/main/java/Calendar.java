@@ -1,3 +1,5 @@
+package main.java;
+
 public class Calendar {
     String[] seasons = {"Spring", "Summer", "Fall", "Winter"};
     private int day;
