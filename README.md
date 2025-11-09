@@ -10,6 +10,25 @@ Integrated concepts:
 - OOP design
 
 
+## Directory
+
+```bash
+mini-stardew-valley/
+├ src/
+├── main.java/
+├──── inputs/ # CONTAINS ALL INPUT CLASSES
+├── Calendar
+├── Crop
+├── CropCatalogue
+├── Farm
+├── Game # Main Class
+├── GameState
+├── Item
+├── Player
+└ .gitignore
+```
+
+
 ## Setup
 
 1. Clone this repo: (or upload the src classes into a java project)
