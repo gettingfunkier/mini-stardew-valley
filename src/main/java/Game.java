@@ -73,10 +73,14 @@ public class Game {
                         sell.execute(player, input);
                         break;
                     case 7:
+                        ShopInput shop = new ShopInput();
+                        shop.execute(player, input);
+                        break;
+                    case 8:
                         ListInventoryInput listInventory = new ListInventoryInput();
                         listInventory.execute(player);
                         break;
-                    case 8:
+                    case 9:
                         CropCatalogueInput cropCatalogue = new CropCatalogueInput();
                         cropCatalogue.execute();
                         break;
@@ -102,9 +106,10 @@ public class Game {
         System.out.println("4. Plant");
         System.out.println("5. Harvest");
         System.out.println("6. Sell");
-        System.out.println("7. List inventory");
-        System.out.println("8. Crop catalogue");
-        System.out.println("0. Exit");
+        System.out.println("7. Shop");
+        System.out.println("8. List inventory");
+        System.out.println("9. Crop catalogue");
+        System.out.println("0. Quit game");
         System.out.print("> ");
     }
 

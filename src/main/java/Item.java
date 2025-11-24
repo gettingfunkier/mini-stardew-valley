@@ -13,6 +13,9 @@ public class Item {
         this.value = value;
     }
 
+    public Item() {
+    }
+
     public String getName() {
         return name;
     }
