@@ -9,7 +9,9 @@ import java.util.Scanner;
 public class SellInput {
     public void execute(Player player, Scanner input) {
         System.out.println();
-        player.listItems();
+        if (!player.listItems()) {
+            return;
+        }
         System.out.println();
         System.out.print("Item: ");
         String itemName = input.next();
