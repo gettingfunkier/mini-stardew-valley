@@ -20,6 +20,10 @@ public class Shop {
     }
 
     public void buyItem(Player player, String itemName) {
+        if (itemName.equals("r")) {
+            return;
+        }
+
         int money = player.getMoney();
         SellableItem item = getItemFromCatalogue(itemName);
         if (item != null) {

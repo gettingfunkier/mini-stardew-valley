@@ -12,6 +12,7 @@ public class ShopInput {
         System.out.println("Shop Catalogue:");
         shop.printShopCatalogue();
         System.out.println();
+        System.out.println("('r' to return to menu)");
         System.out.print("> ");
         String itemName = input.next();
         shop.buyItem(player, itemName);
