@@ -1,6 +1,6 @@
 package main.java.inputs;
 
-import main.java.Crop;
+import main.java.items.Crop;
 
 import java.util.ArrayList;
 

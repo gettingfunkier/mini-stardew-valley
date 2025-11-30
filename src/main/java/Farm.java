@@ -1,5 +1,8 @@
 package main.java;
 
+import main.java.items.Crop;
+import main.java.items.Item;
+
 import java.util.ArrayList;
 
 public class Farm {
@@ -70,7 +73,7 @@ public class Farm {
             Crop crop = plot.getCrop();
 
             if (crop.isReadyToHarvest()) {
-                Item item = new Item(crop.getName(), 1, "crop", crop.getValue());
+                Item item = new Item(crop.getName(), 1, Type.CROP, crop.getValue());
                 player.addItem(item);
 
                 plot.harvestCrop();

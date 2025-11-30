@@ -1,5 +1,7 @@
 package main.java;
 
+import main.java.items.Crop;
+
 public class Plot {
     private int plotID;
     private boolean isWatered;

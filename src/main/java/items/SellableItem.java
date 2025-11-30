@@ -1,14 +1,15 @@
-package main.java;
+package main.java.items;
+
+import main.java.Type;
 
 public class SellableItem extends Item {
     private String name;
-    private String type;
     private int price;
 
-    public SellableItem(String name, String type, int price) {
+    public SellableItem(String name, Type type, int price) {
         this.name = name;
         this.price = price;
-        this.type = name;
+        this.type = type;
     }
 
     public String getName() {

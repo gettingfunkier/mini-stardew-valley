@@ -1,7 +1,6 @@
 package main.java.inputs;
 
-import main.java.Farm;
-import main.java.Item;
+import main.java.items.Item;
 import main.java.Player;
 
 import java.util.Scanner;

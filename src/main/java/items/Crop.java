@@ -1,13 +1,14 @@
-package main.java;
+package main.java.items;
 
-public class Crop {
-    private String name;
+import main.java.Type;
+
+public class Crop extends Item {
     private int daysToGrow;
     private int currentDay;
-    private int value;
     private String season;
 
     public Crop(String name, int daysToGrow, int value, String season) {
+        this.type = Type.CROP;
         this.name = name;
         this.daysToGrow = daysToGrow;
         this.value = value;
@@ -16,6 +17,7 @@ public class Crop {
     }
 
     public Crop(Crop other) {
+        this.type = Type.CROP;
         this.name = other.name;
         this.daysToGrow = other.daysToGrow;
         this.value = other.value;

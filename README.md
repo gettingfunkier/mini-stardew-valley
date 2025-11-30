@@ -158,6 +158,7 @@ Snowfruit - Plant in the Winter, takes 24 days to grow
 
 ## Roadmap
 - Adding save files
+- Fixing player/farm name to allow strings with multiple words
 
 ## Credits
 - Game concept & assets: [**Stardew Valley, ConcernedApe** ↗](https://www.stardewvalley.net/)

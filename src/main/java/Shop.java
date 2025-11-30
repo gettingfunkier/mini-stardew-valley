@@ -1,11 +1,14 @@
 package main.java;
 
+import main.java.items.Item;
+import main.java.items.SellableItem;
+
 import java.util.ArrayList;
 
 public class Shop {
     private final ArrayList<SellableItem> shopCatalogue;
-    SellableItem fish = new SellableItem("Rug", "Decoration", 40);
-    SellableItem latte = new SellableItem("Latte", "Coffee", 255);
+    SellableItem fish = new SellableItem("Rug", Type.DECOR, 40);
+    SellableItem latte = new SellableItem("Latte", Type.COFFEE, 255);
 
     public Shop(Player player) {
         shopCatalogue = new ArrayList<>();
@@ -30,7 +33,7 @@ public class Shop {
             if (item.getPrice() <= money) {
                 shopCatalogue.remove(item);
                 player.setMoney(player.getMoney() - item.getPrice());
-                Item newItem = new Item(itemName, 1, item.getType(), 0);
+                Item newItem = new Item(itemName, 1, item.getType(), item.getPrice() / 3);
                 player.addItem(newItem);
                 System.out.println(item.getName() + " bought for " + item.getPrice() + " coins");
                 return;

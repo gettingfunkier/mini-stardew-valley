@@ -1,5 +1,7 @@
 package main.java;
 
+import main.java.items.Item;
+
 import java.util.ArrayList;
 
 public class Player {
@@ -65,7 +67,7 @@ public class Player {
         }
         System.out.println("Inventory:");
         for (Item item : this.inventory) {
-            System.out.println(item.getQuantity() + "x " + item.getName());
+            System.out.println(item.getQuantity() + "x " + item.getName() + " (" + item.getType() + ")");
         }
         return true;
     }

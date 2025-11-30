@@ -1,12 +1,12 @@
-package main.java;
+package main.java.items;
 
-public class Item {
-    private String name;
-    private String type;
-    private int quantity;
-    private int value;
+import main.java.Type;
 
-    public Item(String name, int quantity, String type, int value) {
+public class Item extends ItemCore {
+    protected int quantity;
+    protected int value;
+
+    public Item(String name, int quantity, Type type, int value) {
         this.name = name;
         this.quantity = quantity;
         this.type = type;
@@ -27,7 +27,7 @@ public class Item {
         this.quantity = quantity;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
