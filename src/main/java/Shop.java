@@ -15,7 +15,7 @@ public class Shop {
 
     public void printShopCatalogue() {
         for (SellableItem item : shopCatalogue) {
-            System.out.println(item.getName() + " for " + item.getPrice() + " coins");
+            System.out.println("⤷ " + item.getName() + " for " + item.getPrice() + " coins");
         }
     }
 

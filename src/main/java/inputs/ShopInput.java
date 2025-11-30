@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class ShopInput {
     public void execute(Player player, Scanner input) {
         Shop shop = new Shop(player);
+        System.out.println();
+        System.out.println("Shop Catalogue:");
         shop.printShopCatalogue();
         System.out.println();
         System.out.print("> ");
