@@ -1,5 +1,6 @@
 package main.java;
 
+import main.java.catalogues.CropCatalogue;
 import main.java.inputs.*;
 import main.java.items.Crop;
 

@@ -1,25 +1,16 @@
 package main.java;
 
+import main.java.catalogues.ShopCatalogue;
 import main.java.items.Item;
 import main.java.items.SellableItem;
 
 import java.util.ArrayList;
 
 public class Shop {
-    private final ArrayList<SellableItem> shopCatalogue;
-    SellableItem fish = new SellableItem("Rug", Type.DECOR, 40);
-    SellableItem latte = new SellableItem("Latte", Type.COFFEE, 255);
+    private ArrayList<SellableItem> shopCatalogue;
 
     public Shop(Player player) {
-        shopCatalogue = new ArrayList<>();
-        shopCatalogue.add(fish);
-        shopCatalogue.add(latte);
-    }
-
-    public void printShopCatalogue() {
-        for (SellableItem item : shopCatalogue) {
-            System.out.println("⤷ " + item.getName() + " for " + item.getPrice() + " coins");
-        }
+        ArrayList<SellableItem> shopCatalogue = ShopCatalogue.getShopCatalogue();
     }
 
     public void buyItem(Player player, String itemName) {
@@ -28,7 +19,7 @@ public class Shop {
         }
 
         int money = player.getMoney();
-        SellableItem item = getItemFromCatalogue(itemName);
+        SellableItem item = ShopCatalogue.getItemFromCatalogue(itemName);
         if (item != null) {
             if (item.getPrice() <= money) {
                 shopCatalogue.remove(item);
@@ -45,12 +36,5 @@ public class Shop {
         return;
     }
 
-    public SellableItem getItemFromCatalogue(String itemName) {
-        for (SellableItem item : shopCatalogue) {
-            if (item.getName().equals(itemName)) {
-                return item;
-            }
-        }
-        return null;
-    }
+
 }
