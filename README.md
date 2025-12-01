@@ -17,17 +17,17 @@ Integrated concepts:
 mini-stardew-valley/
 ├ src/
 ├── main.java/
-├──── catalogues/ # CONTAINS ALL CATALOGUE CLASSES
-├──── inputs/ # CONTAINS ALL INPUT CLASSES
-├──── items/ # CONTAINS ALL ITEM CLASSES
-├── Calendar
-├── Farm
-├── Game # Main Class
-├── GameState
-├── Player
-├── Plot
-├── Shop
-├── Type
+├────── catalogues/ # CONTAINS ALL CATALOGUE CLASSES
+├────── inputs/ # CONTAINS ALL INPUT CLASSES
+├────── items/ # CONTAINS ALL ITEM CLASSES
+├──── Calendar
+├──── Farm
+├──── Game # Main Class
+├──── GameState
+├──── Player
+├──── Plot
+├──── Shop
+├──── Type
 └ .gitignore
 ```
 
