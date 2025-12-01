@@ -5,7 +5,8 @@
 
 ## Inspiration
 
-After getting involved in playing **ConcernedApe**'s **Stardew Valley**, I felt compelled to develop a mini fan version for myself.
+After getting super into in playing ConcernedApe's **Stardew Valley**, I felt compelled to develop a mini fan version for myself.
+
 Integrated concepts:
 - OOP design
 
@@ -16,15 +17,17 @@ Integrated concepts:
 mini-stardew-valley/
 ├ src/
 ├── main.java/
+├──── catalogues/ # CONTAINS ALL CATALOGUE CLASSES
 ├──── inputs/ # CONTAINS ALL INPUT CLASSES
+├──── items/ # CONTAINS ALL ITEM CLASSES
 ├── Calendar
-├── Crop
-├── CropCatalogue
 ├── Farm
 ├── Game # Main Class
 ├── GameState
-├── Item
 ├── Player
+├── Plot
+├── Shop
+├── Type
 └ .gitignore
 ```
 
