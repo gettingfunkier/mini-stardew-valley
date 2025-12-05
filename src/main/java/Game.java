@@ -23,7 +23,7 @@ public class Game {
         System.out.print("Name your farm: ");
         String farmName = input.next();
 
-        Player player = new Player(name, 10000);
+        Player player = new Player(name, 0);
         Farm farm = new Farm(farmName + " Farm", 5);
         Shop shop = new Shop();
         Calendar calendar = new Calendar();
