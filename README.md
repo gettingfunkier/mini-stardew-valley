@@ -56,7 +56,6 @@ mini-stardew-valley/
 - Each crop takes a specific number of days to grow
 
 ## UI & Stats
-Terminal-based, indexed interface:
 
 #### Starting the game
 ```
