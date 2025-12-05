@@ -2,7 +2,7 @@ package main.java.inputs;
 
 import main.java.states.Calendar;
 import main.java.states.Farm;
-import main.java.Plot;
+import main.java.states.Plot;
 
 public class AdvanceDayInput {
     public void execute(Farm farm, Calendar calendar) {

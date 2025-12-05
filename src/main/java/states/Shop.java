@@ -1,9 +1,8 @@
-package main.java;
+package main.java.states;
 
 import main.java.catalogues.ShopCatalogue;
 import main.java.items.Item;
 import main.java.items.SellableItem;
-import main.java.states.Player;
 
 import java.util.ArrayList;
 

@@ -1,14 +1,12 @@
 package main.java.inputs;
 
 import main.java.states.Player;
-import main.java.Shop;
-import main.java.catalogues.ShopCatalogue;
+import main.java.states.Shop;
 
 import java.util.Scanner;
 
 public class ShopInput {
-    public void execute(Player player, Scanner input) {
-        Shop shop = new Shop();
+    public void execute(Player player, Shop shop, Scanner input) {
         System.out.println();
         System.out.println("Shop Catalogue:");
         shop.printShopCatalogue();

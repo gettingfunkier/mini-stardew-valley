@@ -1,6 +1,5 @@
 package main.java.states;
 
-import main.java.Plot;
 import main.java.enums.ItemType;
 import main.java.items.Crop;
 import main.java.items.Item;

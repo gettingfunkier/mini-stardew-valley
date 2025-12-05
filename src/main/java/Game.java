@@ -3,9 +3,7 @@ package main.java;
 import main.java.catalogues.CropCatalogue;
 import main.java.inputs.*;
 import main.java.items.Crop;
-import main.java.states.Calendar;
-import main.java.states.Farm;
-import main.java.states.Player;
+import main.java.states.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,7 +12,7 @@ public class Game {
     public static void main(String[] args) {
 
         GameState game = startGame();
-        mainMenu(game.farm, game.available, game.player, game.calendar);
+        mainMenu(game.player, game.farm, game.shop, game.calendar, game.available);
 
     }
 
@@ -27,14 +25,15 @@ public class Game {
 
         Player player = new Player(name, 0);
         Farm farm = new Farm(farmName + " Farm", 5);
+        Shop shop = new Shop();
         Calendar calendar = new Calendar();
 
         ArrayList<Crop> available = getCropsList();
 
-        return new GameState(player, farm, calendar, available);
+        return new GameState(player, farm, shop, calendar, available);
     }
 
-    public static void mainMenu(Farm farm, ArrayList<Crop> available, Player player, Calendar calendar) {
+    public static void mainMenu(Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
         String season = calendar.getSeason();
 
         while (true) {
@@ -55,36 +54,36 @@ public class Game {
                     case 0:
                         return;
                     case 1:
-                        CheckPlotsInput check = new CheckPlotsInput();
-                        check.execute(farm);
+                        CheckPlotsInput checking = new CheckPlotsInput();
+                        checking.execute(farm);
                         break;
                     case 2:
-                        AdvanceDayInput advanceDay = new AdvanceDayInput();
-                        advanceDay.execute(farm, calendar);
+                        AdvanceDayInput advancingDay = new AdvanceDayInput();
+                        advancingDay.execute(farm, calendar);
                         break;
                     case 3:
-                        WaterInput water = new WaterInput();
-                        water.execute(farm, allPlots, input);
+                        WaterInput watering = new WaterInput();
+                        watering.execute(farm, allPlots, input);
                         break;
                     case 4:
-                        PlantInput plant = new PlantInput();
-                        plant.execute(farm, calendar, emptyPlots, available, input);
+                        PlantInput planting = new PlantInput();
+                        planting.execute(farm, calendar, emptyPlots, available, input);
                         break;
                     case 5:
-                        HarvestInput harvest = new HarvestInput();
-                        harvest.execute(allPlots, farm, player, input);
+                        HarvestInput harvesting = new HarvestInput();
+                        harvesting.execute(allPlots, farm, player, input);
                         break;
                     case 6:
-                        SellInput sell = new SellInput();
-                        sell.execute(player, input);
+                        SellInput selling = new SellInput();
+                        selling.execute(player, input);
                         break;
                     case 7:
-                        ShopInput shop = new ShopInput();
-                        shop.execute(player, input);
+                        ShopInput shopping = new ShopInput();
+                        shopping.execute(player, shop, input);
                         break;
                     case 8:
-                        ListInventoryInput listInventory = new ListInventoryInput();
-                        listInventory.execute(player);
+                        ListInventoryInput listingInventory = new ListInventoryInput();
+                        listingInventory.execute(player);
                         break;
                     case 9:
                         CropCatalogueInput cropCatalogue = new CropCatalogueInput();

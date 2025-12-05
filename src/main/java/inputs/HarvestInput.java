@@ -2,7 +2,7 @@ package main.java.inputs;
 
 import main.java.states.Farm;
 import main.java.states.Player;
-import main.java.Plot;
+import main.java.states.Plot;
 
 import java.util.ArrayList;
 import java.util.Scanner;

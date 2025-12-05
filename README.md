@@ -21,14 +21,11 @@ mini-stardew-valley/
 ├────── enums/ # CONTAINS ALL ENUM LISTS
 ├────── inputs/ # CONTAINS ALL INPUT CLASSES
 ├────── items/ # CONTAINS ALL ITEM CLASSES
-├──── Calendar
-├──── Farm
+├────── states/ # CONTAINS ALL GAME STATE CLASSES
 ├──── Game # Main Class
 ├──── GameState
-├──── Player
-├──── Plot
-├──── Shop
-└ .gitignore
+├ .gitignore
+└ README.md
 ```
 
 

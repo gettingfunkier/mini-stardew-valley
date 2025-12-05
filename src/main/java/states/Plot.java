@@ -1,4 +1,4 @@
-package main.java;
+package main.java.states;
 
 import main.java.enums.PlotState;
 import main.java.items.Crop;
