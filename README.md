@@ -138,6 +138,18 @@ Quantity: 2
 Sold 2 Melon for 162 coins!
 ```
 
+#### Shop
+```bash
+Shop Catalogue:
+⤷ Rug for 40 coins
+⤷ Latte for 255 coins
+⤷ Wristwatch for 1790 coins
+
+('r' to return to menu)
+> Latte
+Latte bought for 255 coins
+```
+
 #### Crop catalogue
 ```bash
 Available Crops:
@@ -159,6 +171,7 @@ Snowfruit - Plant in the Winter, takes 24 days to grow
 ## Roadmap
 - Adding save files
 - Fixing player/farm name to allow strings with multiple words
+- Implementing level-up systems
 
 ## Credits
 - Game concept & assets: [**Stardew Valley, ConcernedApe** ↗](https://www.stardewvalley.net/)
