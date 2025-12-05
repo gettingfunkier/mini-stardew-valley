@@ -68,13 +68,13 @@ public class Plot {
 
     public void advanceDay() {
         if (!isEmpty()) {
-            crop.addCurrentDay();
             if (crop.isReadyToHarvest()) {
                 state = PlotState.READY;
                 return;
             }
             if (isWatered) {
                 isWatered = false;
+                crop.addCurrentDay();
                 state = PlotState.DRY;
             }
         }
