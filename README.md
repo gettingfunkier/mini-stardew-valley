@@ -17,13 +17,14 @@ Integrated concepts:
 mini-stardew-valley/
 ├ src/
 ├── main.java/
-├────── catalogues/ # CONTAINS ALL CATALOGUE CLASSES
-├────── enums/ # CONTAINS ALL ENUM LISTS
-├────── inputs/ # CONTAINS ALL INPUT CLASSES
-├────── items/ # CONTAINS ALL ITEM CLASSES
-├────── states/ # CONTAINS ALL GAME STATE CLASSES
-├──── Game # Main Class
-├──── GameState
+├────── catalogues/   # CONTAINS ALL CATALOGUE CLASSES
+├────── enums/        # CONTAINS ALL ENUM LISTS
+├────── inputs/       # CONTAINS ALL INPUT CLASSES
+├────── items/        # CONTAINS ALL ITEM CLASSES
+├────── menus/        # CONTAINS ALL MENU CLASSES
+├────── states/       # CONTAINS ALL GAME STATE CLASSES
+├──── Game        # Main Class
+├──── GameState   # Parameters
 ├ .gitignore
 └ README.md
 ```
@@ -58,50 +59,51 @@ mini-stardew-valley/
 Terminal-based, indexed interface:
 
 #### Starting the game
-```bash
-Enter name: Jimi
+```
+Enter name: Lanzio
 Name your farm: Bahia
 ```
 
 #### Main Menu
-```bash
+```
 --- [ Day 4 of Winter ] ---------
-Jimi: 5178 coins
+Lanzio: 5178 coins / Level 10 (404/514)
 
-Options:
 1. Check plots
 2. Advance day
 3. Water
 4. Plant
 5. Harvest
 6. Sell
-7. List inventory
-8. Crop catalogue
-0. Exit
+7. Shop
+8. List inventory
+9. Crop catalogue
+0. Quit game
+
 >
 ```
 
 #### Checking plots
-```bash
+```
 Bahia Farm:
-Plot 1 has Amaranth (2/5 days)
-Plot 2 has Pumpkin (4/11 days)
-Plot 3 is empty.
-Plot 4 has Cranberry (5/5 days)
-Plot 5 is empty.
+#1 - Watered Amaranth (2/5 days)
+#2 - Dry Pumpkin (4/11 days)
+#3 - Empty
+#4 - Watered Cranberry (5/5 days)
+#4 - Empty
 ```
 
 #### Water
-```bash
+```
 Choose a plot:
-Plot 1 has Kale (1/4 days)
-Plot 4 has Parsnip (2/3 days)
+#1 - Dry Kale (1/4 days)
+#1 - Dry Parsnip (2/3 days)
 > 4
 Parsnip has been watered!
 ```
 
 #### Plant
-```bash
+```
 Available Crops:
 1. Parsnip (3 days)
 2. Kale (4 days)
@@ -119,15 +121,17 @@ Planted Cauliflower on plot 5
 ```
 
 #### Harvest
-```bash
+```
+#2 - Radish ready to harvest!
+
 Choose a plot:
-Plot 2 has Radish (3/3 days)
 > 2
+
 Radish harvested!
 ```
 
 #### Sell (& List Inventory)
-```bash
+```
 Inventory:
 1x Parsnip
 3x Melon
@@ -139,7 +143,7 @@ Sold 2 Melon for 162 coins!
 ```
 
 #### Shop
-```bash
+```
 Shop Catalogue:
 ⤷ Rug for 40 coins
 ⤷ Latte for 255 coins
@@ -151,7 +155,7 @@ Latte bought for 255 coins
 ```
 
 #### Crop catalogue
-```bash
+```
 Available Crops:
 Parsnip - Plant in the Spring, takes 3 days to grow
 Kale - Plant in the Spring, takes 4 days to grow
@@ -171,7 +175,7 @@ Snowfruit - Plant in the Winter, takes 24 days to grow
 ## Roadmap
 - Adding save files
 - Fixing player/farm name to allow strings with multiple words
-- Implementing level-up systems
+- Implementing exponential reward system
 
 ## Credits
 - Game concept & assets: [**Stardew Valley, ConcernedApe** ↗](https://www.stardewvalley.net/)
