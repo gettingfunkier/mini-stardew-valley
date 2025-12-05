@@ -71,21 +71,32 @@ public class Plot {
             crop.addCurrentDay();
             if (crop.isReadyToHarvest()) {
                 state = PlotState.READY;
+                return;
             }
             if (isWatered) {
+                isWatered = false;
                 state = PlotState.DRY;
             }
-        } isWatered = false;
+        }
     }
 
     public void describe() {
-        if (isEmpty()) {
-            System.out.println("Plot " + plotID + " is empty.");
-
-        } else {
-            System.out.println("Plot " + plotID + " has " + crop.getName() +
-                    " (" + crop.getCurrentDay() + "/" + crop.getDaysToGrow() + " days)");
-
+        switch (state) {
+            case EMPTY:
+                System.out.println("#" + plotID + " - Empty");
+                break;
+            case DRY:
+                System.out.println("#" + plotID + " - Dry " + getCrop().getName() +
+                        " (" + crop.getCurrentDay() + "/" + crop.getDaysToGrow() + " days)");
+                break;
+            case WATERED:
+                System.out.println("#" + plotID + " - Watered " + getCrop().getName() +
+                        " (" + crop.getCurrentDay() + "/" + crop.getDaysToGrow() + " days)");
+                break;
+            case READY:
+                System.out.println("#" + plotID + " - " + getCrop().getName() +
+                        " ready to harvest!");
+                break;
         }
     }
 
