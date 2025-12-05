@@ -18,7 +18,7 @@ public class GameState {
     public GameState(Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
         this.player = player;
         this.farm = farm;
-        this.shop = new Shop();
+        this.shop = shop;
         this.calendar = calendar;
         this.available = available;
     }
