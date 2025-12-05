@@ -3,6 +3,9 @@ package main.java;
 import main.java.catalogues.CropCatalogue;
 import main.java.inputs.*;
 import main.java.items.Crop;
+import main.java.states.Calendar;
+import main.java.states.Farm;
+import main.java.states.Player;
 
 import java.util.ArrayList;
 import java.util.Scanner;

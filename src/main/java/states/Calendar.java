@@ -1,4 +1,4 @@
-package main.java;
+package main.java.states;
 
 public class Calendar {
     String[] seasons = {"Spring", "Summer", "Fall", "Winter"};

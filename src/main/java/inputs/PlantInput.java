@@ -1,8 +1,8 @@
 package main.java.inputs;
 
-import main.java.Calendar;
+import main.java.states.Calendar;
 import main.java.items.Crop;
-import main.java.Farm;
+import main.java.states.Farm;
 import main.java.Plot;
 
 import java.util.ArrayList;

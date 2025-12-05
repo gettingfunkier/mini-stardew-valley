@@ -1,7 +1,7 @@
 package main.java.inputs;
 
 import main.java.items.Item;
-import main.java.Player;
+import main.java.states.Player;
 
 import java.util.Scanner;
 

@@ -18,6 +18,7 @@ mini-stardew-valley/
 ├ src/
 ├── main.java/
 ├────── catalogues/ # CONTAINS ALL CATALOGUE CLASSES
+├────── enums/ # CONTAINS ALL ENUM LISTS
 ├────── inputs/ # CONTAINS ALL INPUT CLASSES
 ├────── items/ # CONTAINS ALL ITEM CLASSES
 ├──── Calendar
@@ -27,7 +28,6 @@ mini-stardew-valley/
 ├──── Player
 ├──── Plot
 ├──── Shop
-├──── ItemType
 └ .gitignore
 ```
 

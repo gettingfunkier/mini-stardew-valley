@@ -1,4 +1,4 @@
-package main.java;
+package main.java.states;
 
 import main.java.items.Item;
 

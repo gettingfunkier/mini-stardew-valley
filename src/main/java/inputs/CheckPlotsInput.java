@@ -1,10 +1,6 @@
 package main.java.inputs;
 
-import main.java.Farm;
-import main.java.Plot;
-import main.java.Calendar;
-
-import java.util.ArrayList;
+import main.java.states.Farm;
 
 public class CheckPlotsInput {
     public void execute(Farm farm) {

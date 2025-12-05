@@ -17,23 +17,4 @@ public class ShopCatalogue {
     public static ArrayList<SellableItem> getShopCatalogue() {
         return shopCatalogue;
     }
-
-    public static void addItemToShop(SellableItem item) {
-        shopCatalogue.add(item);
-    }
-
-    public static void printShopCatalogue() {
-        for (SellableItem item : shopCatalogue) {
-            System.out.println("⤷ " + item.getName() + " for " + item.getPrice() + " coins");
-        }
-    }
-
-    public static SellableItem getItemFromCatalogue(String itemName) {
-        for (SellableItem item : shopCatalogue) {
-            if (item.getName().equals(itemName)) {
-                return item;
-            }
-        }
-        return null;
-    }
 }
