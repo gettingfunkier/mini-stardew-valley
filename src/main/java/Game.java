@@ -23,7 +23,7 @@ public class Game {
         System.out.print("Name your farm: ");
         String farmName = input.next();
 
-        Player player = new Player(name, 0);
+        Player player = new Player(name, 100000);
         Farm farm = new Farm(farmName + " Farm", 5);
         Shop shop = new Shop();
         Calendar calendar = new Calendar();
@@ -59,11 +59,11 @@ public class Game {
                         break;
                     case 2:
                         AdvanceDayInput advancingDay = new AdvanceDayInput();
-                        advancingDay.execute(farm, calendar);
+                        advancingDay.execute(farm, player, calendar);
                         break;
                     case 3:
                         WaterInput watering = new WaterInput();
-                        watering.execute(farm, allPlots, input);
+                        watering.execute(player, farm, allPlots, input);
                         break;
                     case 4:
                         PlantInput planting = new PlantInput();
@@ -102,7 +102,7 @@ public class Game {
     public static void printMenu(Player player, Calendar calendar) {
         System.out.println();
         System.out.println("--- [ Day " + calendar.getDay() + " of " + calendar.getSeason() + " ] ---------");
-        System.out.println(player.getName() + ": " + player.getMoney() + " coins");
+        System.out.println(player.getName() + ": " + player.getMoney() + " coins / Level " + player.getLevel() + " (" + player.getXp() + "/" + player.getLEVEL_HEAD() +")");
         System.out.println();
         System.out.println("Options:");
         System.out.println("1. Check plots");

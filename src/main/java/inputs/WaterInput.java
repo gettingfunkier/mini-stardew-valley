@@ -1,17 +1,19 @@
 package main.java.inputs;
 
 import main.java.states.Farm;
+import main.java.states.Player;
 import main.java.states.Plot;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WaterInput {
-    public void execute(Farm farm, ArrayList<Plot> allPlots, Scanner input) {
+    public void execute(Player player, Farm farm, ArrayList<Plot> allPlots, Scanner input) {
         this.choosePlot(farm, allPlots);
         System.out.print("> ");
         int plotID2 = input.nextInt();
         farm.getPlot(plotID2).waterCrop();
+        player.addXp(5);
     }
 
     public void choosePlot(Farm farm, ArrayList<Plot> allPlots) {

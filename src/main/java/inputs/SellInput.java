@@ -17,6 +17,7 @@ public class SellInput {
         System.out.print("Quantity: ");
         int quantity = input.nextInt();
         sellItem(player, itemName, quantity);
+        player.addXp(90);
     }
 
     public static void sellItem(Player player, String itemName, int quantity) {

@@ -7,6 +7,9 @@ import java.util.ArrayList;
 public class Player {
     private String name;
     private int money;
+    private int xp;
+    private int level;
+    private int LEVEL_HEAD = 200;
     protected ArrayList<Item> inventory;
 
     public Player(String name, int money) {
@@ -75,5 +78,35 @@ public class Player {
     public void sellItem(Item item) {
         this.inventory.remove(item);
         addMoney(item.getValue());
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public void addXp(int amount) {
+        this.xp += amount;
+        updateLevel();
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    private void updateLevel() {
+        if (xp >= LEVEL_HEAD) {
+            System.out.println();
+            System.out.println("LEVEL UP!!");
+        }
+
+        while (xp >= LEVEL_HEAD) {
+            level++; // level + 1
+            xp -= LEVEL_HEAD; // reset xp (keeps overflow)
+            LEVEL_HEAD += (int)(LEVEL_HEAD / 10); // increases level head
+        }
+    }
+
+    public int getLEVEL_HEAD() {
+        return LEVEL_HEAD;
     }
 }

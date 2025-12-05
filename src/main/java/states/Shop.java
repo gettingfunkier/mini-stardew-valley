@@ -24,10 +24,14 @@ public class Shop {
         if (item != null) {
             if (item.getPrice() <= money) {
                 shopCatalogue.remove(item);
-                player.setMoney(player.getMoney() - item.getPrice());
                 Item newItem = new Item(itemName, 1, item.getType(), item.getPrice() / 3);
+
+                player.setMoney(player.getMoney() - item.getPrice());
                 player.addItem(newItem);
+
                 System.out.println(item.getName() + " bought for " + item.getPrice() + " coins");
+                player.addXp((int)(item.getPrice() / 5));
+
                 return;
             }
             System.out.println("You don't have enough money!");

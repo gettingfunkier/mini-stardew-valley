@@ -15,6 +15,5 @@ public class ShopInput {
         System.out.print("> ");
         String itemName = input.next();
         shop.buyItem(player, itemName);
-
     }
 }
