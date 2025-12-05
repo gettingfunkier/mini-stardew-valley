@@ -4,6 +4,7 @@ import main.java.catalogues.CropCatalogue;
 import main.java.inputs.*;
 import main.java.items.Crop;
 import main.java.states.*;
+import main.java.menus.MainMenu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -23,7 +24,7 @@ public class Game {
         System.out.print("Name your farm: ");
         String farmName = input.next();
 
-        Player player = new Player(name, 100000);
+        Player player = new Player(name, 0);
         Farm farm = new Farm(farmName + " Farm", 5);
         Shop shop = new Shop();
         Calendar calendar = new Calendar();
@@ -104,18 +105,7 @@ public class Game {
         System.out.println("--- [ Day " + calendar.getDay() + " of " + calendar.getSeason() + " ] ---------");
         System.out.println(player.getName() + ": " + player.getMoney() + " coins / Level " + player.getLevel() + " (" + player.getXp() + "/" + player.getLEVEL_HEAD() +")");
         System.out.println();
-        System.out.println("Options:");
-        System.out.println("1. Check plots");
-        System.out.println("2. Advance day");
-        System.out.println("3. Water");
-        System.out.println("4. Plant");
-        System.out.println("5. Harvest");
-        System.out.println("6. Sell");
-        System.out.println("7. Shop");
-        System.out.println("8. List inventory");
-        System.out.println("9. Crop catalogue");
-        System.out.println("0. Quit game");
-        System.out.print("> ");
+        MainMenu.defaultMenu();
     }
 
     public static void changeSeason(Farm farm) {
