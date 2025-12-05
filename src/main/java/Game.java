@@ -33,6 +33,7 @@ public class Game {
 
     public static void mainMenu(Farm farm, ArrayList<Crop> available, Player player, Calendar calendar) {
         String season = calendar.getSeason();
+
         while (true) {
             Scanner input = new Scanner(System.in);
             printMenu(player, calendar);

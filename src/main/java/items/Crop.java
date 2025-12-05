@@ -1,6 +1,6 @@
 package main.java.items;
 
-import main.java.Type;
+import main.java.enums.ItemType;
 
 public class Crop extends Item {
     private int daysToGrow;
@@ -8,7 +8,7 @@ public class Crop extends Item {
     private String season;
 
     public Crop(String name, int daysToGrow, int value, String season) {
-        this.type = Type.CROP;
+        this.type = ItemType.CROP;
         this.name = name;
         this.daysToGrow = daysToGrow;
         this.value = value;
@@ -17,7 +17,7 @@ public class Crop extends Item {
     }
 
     public Crop(Crop other) {
-        this.type = Type.CROP;
+        this.type = ItemType.CROP;
         this.name = other.name;
         this.daysToGrow = other.daysToGrow;
         this.value = other.value;

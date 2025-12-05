@@ -27,7 +27,7 @@ mini-stardew-valley/
 ├──── Player
 ├──── Plot
 ├──── Shop
-├──── Type
+├──── ItemType
 └ .gitignore
 ```
 

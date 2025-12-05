@@ -10,13 +10,6 @@ public class CheckPlotsInput {
     public void execute(Farm farm) {
         System.out.println();
         System.out.println(farm.getName() + ":");
-        this.describeAllPlots(farm);
-    }
-
-    public void describeAllPlots(Farm farm) {
-        ArrayList<Plot> allPlots = farm.getAllPlots();
-        for (Plot plot : allPlots) {
-            plot.describe();
-        }
+        farm.listPlots();
     }
 }

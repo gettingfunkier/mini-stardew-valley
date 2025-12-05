@@ -1,12 +1,12 @@
 package main.java.items;
 
-import main.java.Type;
+import main.java.enums.ItemType;
 
 public class Item extends ItemCore {
     protected int quantity;
     protected int value;
 
-    public Item(String name, int quantity, Type type, int value) {
+    public Item(String name, int quantity, ItemType type, int value) {
         this.name = name;
         this.quantity = quantity;
         this.type = type;
@@ -27,7 +27,7 @@ public class Item extends ItemCore {
         this.quantity = quantity;
     }
 
-    public Type getType() {
+    public ItemType getType() {
         return type;
     }
 

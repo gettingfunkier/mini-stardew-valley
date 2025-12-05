@@ -1,12 +1,13 @@
 package main.java;
 
+import main.java.enums.ItemType;
 import main.java.items.Crop;
 import main.java.items.Item;
 
 import java.util.ArrayList;
 
 public class Farm {
-    private String name;
+    private final String name;
     private int capacity;
     private ArrayList<Plot> plots;
 
@@ -23,6 +24,7 @@ public class Farm {
     public String getName() {
         return name;
     }
+
     public int getCapacity() {
         return capacity;
     }
@@ -73,7 +75,7 @@ public class Farm {
             Crop crop = plot.getCrop();
 
             if (crop.isReadyToHarvest()) {
-                Item item = new Item(crop.getName(), 1, Type.CROP, crop.getValue());
+                Item item = new Item(crop.getName(), 1, ItemType.CROP, crop.getValue());
                 player.addItem(item);
 
                 plot.harvestCrop();
@@ -89,11 +91,7 @@ public class Farm {
 
     public void listPlots() {
         for (Plot plot : plots) {
-            if (!plot.isEmpty()) {
-                System.out.println("Plot " + plot.getPlotID() + ": " + plot.getCrop().getName());
-            } else {
-                System.out.println("Plot " + plot.getPlotID() + ": empty");
-            }
+            plot.describe();
         }
     }
 }
