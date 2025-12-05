@@ -34,11 +34,11 @@ mini-stardew-valley/
 1. Clone this repo: (or upload the src classes into a java project)
    ```bash
    git clone https://github.com/gettingfunkier/mini-stardew-valley.git
-   cd mini-stardew-valley/src
+   cd mini-stardew-valley/
 2. Run with Java:
    ```bash
-   javac Game.java
-   java Game.java
+   javac -d out $(find src/main/java -name "*.java")
+   java src/main/java/Game.java
    ```
 
 ## How to play
