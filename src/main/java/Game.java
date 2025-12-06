@@ -111,49 +111,6 @@ public class Game {
                         advancingDay.execute(farm, player, calendar);
                         break;
                 }
-
-                /*
-                switch (action) {
-                    case 0:
-                        return;
-                    case 1:
-                        CheckPlotsInput checking = new CheckPlotsInput();
-                        checking.execute(farm);
-                        break;
-                    case 2:
-                        AdvanceDayInput advancingDay = new AdvanceDayInput();
-                        advancingDay.execute(farm, player, calendar);
-                        break;
-                    case 3:
-                        WaterInput watering = new WaterInput();
-                        watering.execute(player, farm, allPlots, input);
-                        break;
-                    case 4:
-                        PlantInput planting = new PlantInput();
-                        planting.execute(farm, calendar, emptyPlots, available, input);
-                        break;
-                    case 5:
-                        HarvestInput harvesting = new HarvestInput();
-                        harvesting.execute(allPlots, farm, player, input);
-                        break;
-                    case 6:
-                        SellInput selling = new SellInput();
-                        selling.execute(player, input);
-                        break;
-                    case 7:
-                        ShopInput shopping = new ShopInput();
-                        shopping.execute(player, shop, input);
-                        break;
-                    case 8:
-                        ListInventoryInput listingInventory = new ListInventoryInput();
-                        listingInventory.execute(player);
-                        break;
-                    case 9:
-                        CropCatalogueInput cropCatalogue = new CropCatalogueInput();
-                        cropCatalogue.execute();
-                        break;
-                }
-                 */
             }
 
             catch (Exception e) {
