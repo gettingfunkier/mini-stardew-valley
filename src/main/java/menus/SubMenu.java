@@ -8,7 +8,7 @@ public abstract class SubMenu {
         System.out.println("  ├── 3. Plant");
         System.out.println("  └── 4. Harvest");
         System.out.println();
-        System.out.print("0. Return");
+        System.out.println("0. Return");
         System.out.print("> ");
     }
 

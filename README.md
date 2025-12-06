@@ -68,18 +68,36 @@ Name your farm: Bahia
 --- [ Day 4 of Winter ] ---------
 Lanzio: 5178 coins / Level 10 (404/514)
 
-1. Check plots
-2. Advance day
-3. Water
-4. Plant
-5. Harvest
-6. Sell
-7. Shop
-8. List inventory
-9. Crop catalogue
-0. Quit game
+1. Farming
+2. Trading
+ | 
+3. List Inventory
+4. Crop catalogue
+ | 
+5. Advance Day
+0. Exit
 
 >
+```
+```
+// input 1
+Farming:
+  ├── 1. Inspect
+  ├── 2. Water
+  ├── 3. Plant
+  └── 4. Harvest
+
+0. Return
+> 
+```
+```
+// input 2
+Trading:
+  ├── 1. Sell
+  └── 2. Shop
+
+0. Return
+> 
 ```
 
 #### Checking plots
@@ -89,14 +107,14 @@ Bahia Farm:
 #2 - Dry Pumpkin (4/11 days)
 #3 - Empty
 #4 - Watered Cranberry (5/5 days)
-#4 - Empty
+#5 - Empty
 ```
 
 #### Water
 ```
 Choose a plot:
 #1 - Dry Kale (1/4 days)
-#1 - Dry Parsnip (2/3 days)
+#4 - Dry Parsnip (2/3 days)
 > 4
 Parsnip has been watered!
 ```
