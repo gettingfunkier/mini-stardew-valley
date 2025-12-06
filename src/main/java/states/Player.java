@@ -65,7 +65,7 @@ public class Player {
 
     public boolean listItems() {
         if (inventory.isEmpty()) {
-            System.out.println("You have no items in your inventory");
+            System.out.println("You have no items in your inventory!");
             return false;
         }
         System.out.println("Inventory:");

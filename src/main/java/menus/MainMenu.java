@@ -15,4 +15,17 @@ public abstract class MainMenu {
         System.out.println();
         System.out.print("> ");
     }
+
+    public static void newMenu() {
+        System.out.println("1. Farming");
+        System.out.println("2. Trading");
+        System.out.println(" | ");
+        System.out.println("3. List Inventory");
+        System.out.println("4. Crop catalogue");
+        System.out.println(" | ");
+        System.out.println("5. Advance Day");
+        System.out.println("0. Exit");
+        System.out.println();
+        System.out.print("> ");
+    }
 }

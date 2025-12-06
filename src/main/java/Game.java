@@ -3,6 +3,7 @@ package main.java;
 import main.java.catalogues.CropCatalogue;
 import main.java.inputs.*;
 import main.java.items.Crop;
+import main.java.menus.SubMenu;
 import main.java.states.*;
 import main.java.menus.MainMenu;
 
@@ -51,6 +52,67 @@ public class Game {
 
             try {
                 int action = input.nextInt();
+
+                // NEW MENU
+                switch (action) {
+                    case 0:
+                        return;
+                    case 1:
+                        SubMenu.farmingMenu();
+                        int farmingAction = input.nextInt();
+                        switch (farmingAction) {
+                            case 0:
+                                break;
+                            case 1:
+                                CheckPlotsInput checking = new CheckPlotsInput();
+                                checking.execute(farm);
+                                break;
+                            case 2:
+                                WaterInput watering = new WaterInput();
+                                watering.execute(player, farm, allPlots, input);
+                                break;
+                            case 3:
+                                PlantInput planting = new PlantInput();
+                                planting.execute(farm, calendar, emptyPlots, available, input);
+                                break;
+                            case 4:
+                                HarvestInput harvesting = new HarvestInput();
+                                harvesting.execute(allPlots, farm, player, input);
+                                break;
+                        }
+                        break;
+                    case 2:
+                        SubMenu.tradingMenu();
+                        int tradingAction = input.nextInt();
+                        switch (tradingAction) {
+                            case 0:
+                                break;
+                            case 1:
+                                SellInput selling = new SellInput();
+                                selling.execute(player, input);
+                                break;
+                            case 2:
+                                ShopInput shopping = new ShopInput();
+                                shopping.execute(player, shop, input);
+                                break;
+                        }
+                        break;
+                    case 3:
+                        System.out.println("debug3");
+                        ListInventoryInput listingInventory = new ListInventoryInput();
+                        listingInventory.execute(player);
+                        break;
+                    case 4:
+                        CropCatalogueInput cropCatalogue = new CropCatalogueInput();
+                        cropCatalogue.execute();
+                        break;
+                    case 5:
+                        AdvanceDayInput advancingDay = new AdvanceDayInput();
+                        advancingDay.execute(farm, player, calendar);
+                        break;
+                }
+
+                /*
                 switch (action) {
                     case 0:
                         return;
@@ -91,6 +153,7 @@ public class Game {
                         cropCatalogue.execute();
                         break;
                 }
+                 */
             }
 
             catch (Exception e) {
@@ -105,7 +168,7 @@ public class Game {
         System.out.println("--- [ Day " + calendar.getDay() + " of " + calendar.getSeason() + " ] ---------");
         System.out.println(player.getName() + ": " + player.getMoney() + " coins / Level " + player.getLevel() + " (" + player.getXp() + "/" + player.getLEVEL_HEAD() +")");
         System.out.println();
-        MainMenu.defaultMenu();
+        MainMenu.newMenu();
     }
 
     public static void changeSeason(Farm farm) {

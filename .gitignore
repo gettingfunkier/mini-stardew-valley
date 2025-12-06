@@ -28,3 +28,6 @@ Thumbs.db
 *.jar
 *.war
 *.ear
+
+# --- Stuff ---
+notepad.rtf
