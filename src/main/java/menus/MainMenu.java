@@ -1,7 +1,7 @@
 package main.java.menus;
 
 public abstract class MainMenu {
-    public static void defaultMenu() {
+    public static void backupMenu() {
         System.out.println("1. Check plots");
         System.out.println("2. Advance day");
         System.out.println("3. Water");
@@ -16,7 +16,7 @@ public abstract class MainMenu {
         System.out.print("> ");
     }
 
-    public static void newMenu() {
+    public static void defaultMenu() {
         System.out.println("1. Farming");
         System.out.println("2. Trading");
         System.out.println(" | ");

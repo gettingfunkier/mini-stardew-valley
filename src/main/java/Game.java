@@ -52,8 +52,6 @@ public class Game {
 
             try {
                 int action = input.nextInt();
-
-                // NEW MENU
                 switch (action) {
                     case 0:
                         return;
@@ -125,7 +123,7 @@ public class Game {
         System.out.println("--- [ Day " + calendar.getDay() + " of " + calendar.getSeason() + " ] ---------");
         System.out.println(player.getName() + ": " + player.getMoney() + " coins / Level " + player.getLevel() + " (" + player.getXp() + "/" + player.getLEVEL_HEAD() +")");
         System.out.println();
-        MainMenu.newMenu();
+        MainMenu.defaultMenu();
     }
 
     public static void changeSeason(Farm farm) {

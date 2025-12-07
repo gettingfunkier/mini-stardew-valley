@@ -1,7 +1,7 @@
 package main.java.states;
 
 public class Calendar {
-    String[] seasons = {"Spring", "Summer", "Fall", "Winter"};
+    final String[] seasons = {"Spring", "Summer", "Fall", "Winter"};
     private int day;
     private String season;
     private int seasonIndex;
