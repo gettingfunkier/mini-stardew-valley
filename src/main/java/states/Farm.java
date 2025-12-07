@@ -75,7 +75,7 @@ public class Farm {
             Crop crop = plot.getCrop();
 
             if (crop.isReadyToHarvest()) {
-                Item item = new Item(crop.getName(), 1, ItemType.CROP, crop.getValue());
+                Item item = new Item(crop.getId(), crop.getName(), 1, ItemType.CROP, crop.getValue());
                 player.addItem(item);
 
                 plot.harvestCrop();

@@ -24,7 +24,7 @@ public class Shop {
         if (item != null) {
             if (item.getPrice() <= money) {
                 shopCatalogue.remove(item);
-                Item newItem = new Item(itemName, 1, item.getType(), item.getPrice() / 3);
+                Item newItem = new Item(item.getId(), itemName, 1, item.getType(), item.getPrice() / 3);
 
                 player.setMoney(player.getMoney() - item.getPrice());
                 player.addItem(newItem);

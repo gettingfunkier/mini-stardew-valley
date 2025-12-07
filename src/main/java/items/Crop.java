@@ -7,18 +7,15 @@ public class Crop extends Item {
     private int currentDay;
     private String season;
 
-    public Crop(String name, int daysToGrow, int value, String season) {
-        this.type = ItemType.CROP;
-        this.name = name;
+    public Crop(String id, String name, int value, int daysToGrow, String season) {
+        super(id, name, 0, ItemType.CROP, value);
         this.daysToGrow = daysToGrow;
-        this.value = value;
         this.currentDay = 0;
         this.season = season;
     }
 
     public Crop(Crop other) {
-        this.type = ItemType.CROP;
-        this.name = other.name;
+        super(other);
         this.daysToGrow = other.daysToGrow;
         this.value = other.value;
         this.currentDay = 0;

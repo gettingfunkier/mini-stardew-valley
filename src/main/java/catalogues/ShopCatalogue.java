@@ -9,9 +9,9 @@ public class ShopCatalogue {
     private static ArrayList<SellableItem> shopCatalogue = new ArrayList<>();
 
     static {
-        shopCatalogue.add(new SellableItem("Rug", ItemType.DECOR, 40));
-        shopCatalogue.add(new SellableItem("Latte", ItemType.COFFEE, 255));
-        shopCatalogue.add(new SellableItem("Wristwatch", ItemType.WEARABLE, 1790));
+        shopCatalogue.add(new SellableItem("DECOR_rug", "Rug", ItemType.DECOR, 40));
+        shopCatalogue.add(new SellableItem("COFFEE_latte", "Latte", ItemType.COFFEE, 255));
+        shopCatalogue.add(new SellableItem("WEARABLE_wristwatch", "Wristwatch", ItemType.WEARABLE, 1790));
     }
 
     public static ArrayList<SellableItem> getShopCatalogue() {
