@@ -194,6 +194,7 @@ Snowfruit - Plant in the Winter, takes 24 days to grow
 - Fishing minigame (somehow)
 - Fixing player/farm name to allow strings with multiple words
 - Implementing exponential reward system
+- Turn GUI into some sort of interactable (props @zF4ke)
 
 ## Credits
 - Game concept & assets: [**Stardew Valley, ConcernedApe** ↗](https://www.stardewvalley.net/)
