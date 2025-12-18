@@ -42,6 +42,10 @@ public class Player {
         return inventory;
     }
 
+    public int getInventorySize() {
+        return inventory.size();
+    }
+
     public void addItem(Item newItem) {
         for (Item item : inventory) {
             if (item.getName().equalsIgnoreCase(newItem.getName())) {

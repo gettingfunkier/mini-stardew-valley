@@ -1,7 +1,6 @@
 # Mini Stardew Valley!
 > A terminal-based, cosy farming sim **inspired by Stardew Valley!**
 > Written in Java as a practice/passion project <3
-[Game.java](src/main/java/Game.java)
 
 ## Inspiration
 
@@ -15,16 +14,35 @@ Integrated concepts:
 
 ```bash
 mini-stardew-valley/
+│
 ├ src/
 ├── main.java/
-├────── catalogues/   # CONTAINS ALL CATALOGUE CLASSES
-├────── enums/        # CONTAINS ALL ENUM LISTS
-├────── inputs/       # CONTAINS ALL INPUT CLASSES
-├────── items/        # CONTAINS ALL ITEM CLASSES
-├────── menus/        # CONTAINS ALL MENU CLASSES
-├────── states/       # CONTAINS ALL GAME STATE CLASSES
-├──── Game        # Main Class
-├──── GameState   # Parameters
+│
+├────── catalogues/     # CONTAINS ALL CATALOGUE CLASSES
+├────── enums/          # CONTAINS ALL ENUM LISTS
+├────── inputs/         # CONTAINS ALL INPUT CLASSES
+├────── items/          # CONTAINS ALL ITEM CLASSES
+├────── menus/          # CONTAINS ALL MENU CLASSES
+├────── previews/       # CONTAINS ALL PREVIEW CLASSES
+├────── writers/        # CONTAINS ALL READ/WRITE CLASSES
+├────── states/         # CONTAINS ALL GAME STATE CLASSES
+│
+├──── Game           # Main Class
+├──── GameContent    # (not used)  
+├──── GameState      # Parameters
+│
+├ saves/
+│
+├── SAVE_FILE_1/  # slot 1
+├──── calendar.sdv   # calendar data
+├──── farm.sdv       # farm data (incomplete)
+├──── player.sdv     # player data
+├──── shop.sdv       # shop data (NOT IMPLEMENTED YET!!)
+│
+├── SAVE_FILE_2/  # slot 2
+├── SAVE_FILE_3/  # slot 3
+├── SAVE_FILE_3/  # slot 4
+│
 ├ .gitignore
 └ README.md
 ```
@@ -72,15 +90,18 @@ Lanzio: 5178 coins / Level 10 (404/514)
 2. Trading
  | 
 3. List Inventory
-4. Crop catalogue
+4. Crop Catalogue
  | 
 5. Advance Day
+ | 
+6. Save
 0. Exit
 
 >
 ```
 ```
 // input 1
+
 Farming:
   ├── 1. Inspect
   ├── 2. Water
@@ -92,9 +113,22 @@ Farming:
 ```
 ```
 // input 2
+
 Trading:
   ├── 1. Sell
   └── 2. Shop
+
+0. Return
+> 
+```
+```
+// input 6
+
+Choose a slot:
+├── Save 1: Jimi
+├── Save 2: Lily
+├── Save 3
+└── Save 4
 
 0. Return
 > 
@@ -190,11 +224,11 @@ Snowfruit - Plant in the Winter, takes 24 days to grow
 ```
 
 ## Roadmap
-- Adding save files
+- Adding save files (ONGOING)
 - Fishing minigame (somehow)
 - Fixing player/farm name to allow strings with multiple words
 - Implementing exponential reward system
-- Turn GUI into some sort of interactable (props @zF4ke)
+- Turn GUI into some sort of interactable (props [@zF4ke](https://github.com/zF4ke))
 
 ## Credits
 - Game concept & assets: [**Stardew Valley, ConcernedApe** ↗](https://www.stardewvalley.net/)

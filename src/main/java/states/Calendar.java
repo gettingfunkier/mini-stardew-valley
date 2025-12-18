@@ -28,4 +28,8 @@ public class Calendar {
     public String getSeason() {
         return season;
     }
+
+    public int getSeasonIndex() {
+        return seasonIndex;
+    }
 }

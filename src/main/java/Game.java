@@ -107,6 +107,12 @@ public class Game {
                         AdvanceDayInput advancingDay = new AdvanceDayInput();
                         advancingDay.execute(farm, player, calendar);
                         break;
+                    case 6:
+                        SubMenu.savingMenu();
+                        int SAVE_FILE = input.nextInt();
+                        if (SAVE_FILE == 0) {break;}
+                        SaveInput.execute(SAVE_FILE, player, calendar, farm);
+                        break;
                 }
             }
 
