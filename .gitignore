@@ -33,6 +33,5 @@ Thumbs.db
 notepad.rtf
 
 # --- Save files ---
-player.sdv
-calendar.sdv
-farm.sdv
+saves/**/*
+!saves/**/.gitkeep
