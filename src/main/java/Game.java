@@ -96,7 +96,6 @@ public class Game {
                         }
                         break;
                     case 3:
-                        System.out.println("debug3");
                         ListInventoryInput listingInventory = new ListInventoryInput();
                         listingInventory.execute(player);
                         break;

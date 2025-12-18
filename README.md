@@ -1,7 +1,7 @@
 # Mini Stardew Valley!
 > A terminal-based, cosy farming sim **inspired by Stardew Valley!**
 > Written in Java as a practice/passion project <3
-
+[Game.java](src/main/java/Game.java)
 
 ## Inspiration
 
