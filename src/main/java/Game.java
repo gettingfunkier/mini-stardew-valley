@@ -3,6 +3,7 @@ package main.java;
 import main.java.catalogues.CropCatalogue;
 import main.java.inputs.*;
 import main.java.items.Crop;
+import main.java.menus.StartMenu;
 import main.java.menus.SubMenu;
 import main.java.states.*;
 import main.java.menus.MainMenu;
@@ -13,12 +14,19 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args) {
 
+        Scanner input = new Scanner(System.in);
+        StartMenu.startMenu();
+
+        final int start = input.nextInt();
+
         GameState game = startGame();
         mainMenu(game.player, game.farm, game.shop, game.calendar, game.available);
 
     }
 
     public static GameState startGame() {
+        System.out.println();
+
         Scanner input = new Scanner(System.in);
         System.out.print("Enter name: ");
         String name = input.next();

@@ -30,7 +30,7 @@ Thumbs.db
 *.ear
 
 # --- Stuff ---
-notepad.rtf
+notepad.log
 
 # --- Save files ---
 saves/**/*
