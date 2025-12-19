@@ -4,7 +4,7 @@ import main.java.enums.PlotState;
 import main.java.items.Crop;
 
 public class Plot {
-    private int plotID;
+    private final int plotID;
     private boolean isWatered;
     private Crop crop;
     private PlotState state;
@@ -17,7 +17,7 @@ public class Plot {
     }
 
     public boolean isEmpty() {
-        return crop == null;
+        return state == PlotState.EMPTY;
     }
 
     public int getPlotID() {
@@ -68,15 +68,15 @@ public class Plot {
 
     public void advanceDay() {
         if (!isEmpty()) {
+            if (isWatered) {
+                isWatered = false;
+                crop.addCurrentDay();
+            }
             if (crop.isReadyToHarvest()) {
                 state = PlotState.READY;
                 return;
             }
-            if (isWatered) {
-                isWatered = false;
-                crop.addCurrentDay();
-                state = PlotState.DRY;
-            }
+            state = PlotState.DRY;
         }
     }
 

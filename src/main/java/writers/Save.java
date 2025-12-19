@@ -1,10 +1,8 @@
 package main.java.writers;
 
+import main.java.items.Crop;
 import main.java.items.Item;
-import main.java.states.Calendar;
-import main.java.states.Farm;
-import main.java.states.Player;
-import main.java.states.Shop;
+import main.java.states.*;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -51,7 +49,21 @@ public class Save {
             fw.write("name: " + farm.getName() + "\n");
             fw.write("capacity: " + farm.getCapacity() + "\n");
 
-            // MUST SAVE PLOT STATES TOO!!
+            for (int i = 1; i <= farm.getCapacity(); i++) {
+
+                Plot plot = farm.getPlot(i);
+
+                if (!plot.isEmpty()) {
+                    Crop crop = plot.getCrop();
+                    fw.write("plot_" + i + ": " + plot.getState() + ","
+                                + crop.getId() + ", " + crop.getCurrentDay() + "\n");
+                }
+
+                else {
+                    fw.write("plot_" + i + ": empty\n");
+                }
+
+            }
 
         } catch (IOException e) {
             //noinspection CallToPrintStackTrace
