@@ -29,7 +29,7 @@ public abstract class SubMenu {
         System.out.print("> ");
     }
 
-    public static void savingMenu() {
+    public static void savesMenu() {
 
         System.out.println("Choose a slot:");
 
@@ -60,7 +60,6 @@ public abstract class SubMenu {
         }
 
         System.out.println();
-        System.out.println("0. Return");
         System.out.print("> ");
     }
 }

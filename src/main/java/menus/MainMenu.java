@@ -24,8 +24,6 @@ public abstract class MainMenu {
         System.out.println("4. Crop Catalogue");
         System.out.println(" | ");
         System.out.println("5. Advance Day");
-        System.out.println(" | ");
-        System.out.println("6. Save");
         System.out.println("0. Exit");
         System.out.println();
         System.out.print("> ");

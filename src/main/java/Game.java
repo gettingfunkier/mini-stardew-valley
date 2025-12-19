@@ -7,6 +7,7 @@ import main.java.menus.StartMenu;
 import main.java.menus.SubMenu;
 import main.java.states.*;
 import main.java.menus.MainMenu;
+import main.java.writers.Save;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,12 +16,35 @@ public class Game {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        StartMenu.startMenu();
 
+        StartMenu.startMenu();
         final int start = input.nextInt();
 
+        int saveFile;
+
+        while (true) {
+            SubMenu.savesMenu();
+
+            if (!input.hasNextInt()) {
+                System.out.println();
+                System.out.println("Invalid input!" + "\n");
+                input.next();
+                continue;
+            }
+
+            saveFile = input.nextInt();
+
+            if (saveFile < 1 || saveFile > 4) {
+                System.out.println();
+                System.out.println("Invalid slot! (1 to 4)" + "\n");
+                continue;
+            }
+
+            break;
+        }
+
         GameState game = startGame();
-        mainMenu(game.player, game.farm, game.shop, game.calendar, game.available);
+        mainMenu(saveFile, game.player, game.farm, game.shop, game.calendar, game.available);
 
     }
 
@@ -43,7 +67,7 @@ public class Game {
         return new GameState(player, farm, shop, calendar, available);
     }
 
-    public static void mainMenu(Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
+    public static void mainMenu(int saveFile, Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
         String season = calendar.getSeason();
 
         while (true) {
@@ -114,12 +138,7 @@ public class Game {
                     case 5:
                         AdvanceDayInput advancingDay = new AdvanceDayInput();
                         advancingDay.execute(farm, player, calendar);
-                        break;
-                    case 6:
-                        SubMenu.savingMenu();
-                        int SAVE_FILE = input.nextInt();
-                        if (SAVE_FILE == 0) {break;}
-                        SaveInput.execute(SAVE_FILE, player, calendar, farm);
+                        Save.execute(saveFile, player, calendar, farm, shop);
                         break;
                 }
             }

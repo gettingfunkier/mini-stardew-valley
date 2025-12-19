@@ -2,10 +2,12 @@ package main.java.writers;
 
 import main.java.items.Crop;
 import main.java.items.Item;
+import main.java.items.SellableItem;
 import main.java.states.*;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Save {
     public static void playerToFile(int SAVE_FILE, Player player) {
@@ -71,6 +73,26 @@ public class Save {
         }
     }
 
-    // MUST SAVE SHOP TOO!!
+    public static void shopToFile(int SAVE_FILE, Shop shop) {
+        try (FileWriter fw = new FileWriter("saves/SAVE_FILE_" + SAVE_FILE + "/shop.sdv")) {
+
+            ArrayList<SellableItem> shopCatalogue = shop.getShopCatalogue();
+
+            for (SellableItem sellableItem : shopCatalogue) {
+                fw.write(sellableItem.getId() + "," + sellableItem.getPrice() + "," + sellableItem.getQuantity() + "\n");
+            }
+
+        } catch (IOException e) {
+            //noinspection CallToPrintStackTrace
+            e.printStackTrace();
+        }
+    }
+
+    public static void execute(int SAVE_FILE, Player player, Calendar calendar, Farm farm, Shop shop) {
+        playerToFile(SAVE_FILE, player);
+        calendarToFile(SAVE_FILE, calendar);
+        farmToFile(SAVE_FILE, farm);
+        shopToFile(SAVE_FILE, shop);
+    }
 }
 

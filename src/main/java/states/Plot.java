@@ -37,12 +37,9 @@ public class Plot {
         return state;
     }
 
-    public Crop harvestCrop() {
-        Crop harvested = crop;
-        crop.resetCurrentDay();
+    public void harvestCrop() {
         crop = null;
         state = PlotState.EMPTY;
-        return harvested;
     }
 
     public void clearPlot() {
@@ -51,12 +48,12 @@ public class Plot {
     }
 
     public void waterCrop() {
-        if (this.crop != null) {
+        if (this.crop != null && this.state == PlotState.DRY) {
             isWatered = true;
             System.out.println(crop.getName() + " has been watered!");
             state = PlotState.WATERED;
         } else {
-            System.out.println("Plot is empty!");
+            System.out.println("Plot is either empty, ready to harvest, or already watered!");
         }
     }
 
@@ -68,15 +65,16 @@ public class Plot {
 
     public void advanceDay() {
         if (!isEmpty()) {
-            if (isWatered) {
-                isWatered = false;
-                crop.addCurrentDay();
-            }
+            crop.addCurrentDay();
+
             if (crop.isReadyToHarvest()) {
                 state = PlotState.READY;
                 return;
             }
-            state = PlotState.DRY;
+            if (isWatered) {
+                isWatered = false;
+                state = PlotState.DRY;
+            }
         }
     }
 

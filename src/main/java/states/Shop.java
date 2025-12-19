@@ -19,7 +19,7 @@ public class Shop {
         }
 
         int money = player.getMoney();
-        SellableItem item = getItemFromCatalogue(itemName);
+        SellableItem item = getItemFromShopCatalogue(itemName);
 
         if (item != null) {
             if (item.getPrice() <= money) {
@@ -30,7 +30,7 @@ public class Shop {
                 player.addItem(newItem);
 
                 System.out.println(item.getName() + " bought for " + item.getPrice() + " coins");
-                player.addXp((int)(item.getPrice() / 5));
+                player.addXp(item.getPrice() / 5);
 
                 return;
             }
@@ -40,7 +40,7 @@ public class Shop {
         System.out.println("We don't sell that here!");
     }
 
-    public void addItemToShop(SellableItem item) {
+    public void addItemToShopCatalogue(SellableItem item) {
         shopCatalogue.add(item);
     }
 
@@ -50,12 +50,16 @@ public class Shop {
         }
     }
 
-    public SellableItem getItemFromCatalogue(String itemName) {
+    public SellableItem getItemFromShopCatalogue(String itemName) {
         for (SellableItem item : shopCatalogue) {
             if (item.getName().equals(itemName)) {
                 return item;
             }
         }
         return null;
+    }
+
+    public ArrayList<SellableItem> getShopCatalogue() {
+        return shopCatalogue;
     }
 }

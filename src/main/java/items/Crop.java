@@ -3,9 +3,9 @@ package main.java.items;
 import main.java.enums.ItemType;
 
 public class Crop extends Item {
-    private int daysToGrow;
+    private final int daysToGrow;
+    private final String season;
     private int currentDay;
-    private String season;
 
     public Crop(String id, String name, int value, int daysToGrow, String season) {
         super(id, name, 0, ItemType.CROP, value);
@@ -20,14 +20,6 @@ public class Crop extends Item {
         this.value = other.value;
         this.currentDay = 0;
         this.season = other.season;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getValue() {
-        return value;
     }
 
     public int getDaysToGrow() {
@@ -47,14 +39,7 @@ public class Crop extends Item {
         isReadyToHarvest();
     }
 
-    public void resetCurrentDay() {
-        currentDay = 0;
-    }
-
     public boolean isReadyToHarvest() {
-        if (currentDay >= daysToGrow) {
-            return true;
-        }
-        return false;
+        return daysToGrow <= currentDay;
     }
 }
