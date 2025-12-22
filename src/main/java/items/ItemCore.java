@@ -4,8 +4,8 @@ import main.java.enums.ItemType;
 
 public abstract class ItemCore {
     protected final String id;
-    protected String name;
-    protected ItemType type;
+    protected final String name;
+    protected final ItemType type;
 
     public ItemCore(String id, String name, ItemType type) {
         this.id = id;
