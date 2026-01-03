@@ -28,8 +28,8 @@ mini-stardew-valley/
 ├────── writers/        # CONTAINS ALL READ/WRITE CLASSES
 │
 ├──── Game           # Main Class
-├──── Content    # (not used)  
-├──── Shell      # Parameters
+├──── Content        # (not used)  
+├──── Shell          # Parameters
 │
 ├ saves/
 │
