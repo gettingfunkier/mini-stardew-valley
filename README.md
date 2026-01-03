@@ -1,10 +1,7 @@
 # Mini Stardew Valley!
-#### A terminal-based, cosy farming sim **inspired by Stardew Valley!**
-> Written in Java as a practice/passion project <3
+#### A terminal-based, cosy farming sim, written in Java as a practice/passion project <3
 
-## Inspiration
-
-A friend convinced me to play ConcernedApe's **Stardew Valley**, and I loved it so much I felt compelled to develop a mini fan version for myself.
+> A friend convinced me to play ConcernedApe's **Stardew Valley**, and I loved it so much I felt compelled to develop a mini fan version for myself.
 
 ## Directory
 
