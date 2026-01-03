@@ -24,8 +24,8 @@ mini-stardew-valley/
 ├────── items/          # CONTAINS ALL ITEM CLASSES
 ├────── menus/          # CONTAINS ALL MENU CLASSES
 ├────── previews/       # CONTAINS ALL PREVIEW CLASSES
-├────── writers/        # CONTAINS ALL READ/WRITE CLASSES
 ├────── states/         # CONTAINS ALL GAME STATE CLASSES
+├────── writers/        # CONTAINS ALL READ/WRITE CLASSES
 │
 ├──── Game           # Main Class
 ├──── GameContent    # (not used)  
