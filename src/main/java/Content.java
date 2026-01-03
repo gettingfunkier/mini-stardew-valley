@@ -4,7 +4,7 @@ import main.java.enums.ItemType;
 import main.java.items.Crop;
 import main.java.items.Sellable;
 
-public class GameContent {
+public class Content {
     public static void registerCrops() {
         new Crop("CROP_parsnip", "Parsnip", 21, 3, "Spring");
         new Crop("CROP_kale", "Kale", 27, 4, "Spring");

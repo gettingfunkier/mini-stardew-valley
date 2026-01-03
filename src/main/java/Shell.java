@@ -8,7 +8,7 @@ import main.java.states.Shop;
 
 import java.util.ArrayList;
 
-public class GameShell {
+public class Shell {
     public int saveSlot;
     public Player player;
     public Farm farm;
@@ -16,7 +16,7 @@ public class GameShell {
     public Calendar calendar;
     public ArrayList<Crop> available;
 
-    public GameShell(int saveFile, Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
+    public Shell(int saveFile, Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
         this.saveSlot = saveFile;
         this.player = player;
         this.farm = farm;

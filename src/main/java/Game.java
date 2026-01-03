@@ -16,7 +16,7 @@ import static main.java.states.Plot.clearAllPlots;
 public class Game {
     public static void main(String[] args) {
 
-        GameShell game = setUp();
+        Shell game = setUp();
         mainMenu(game.saveSlot, game.player, game.farm, game.shop, game.calendar, game.available);
 
     }
