@@ -76,6 +76,28 @@ mini-stardew-valley/
 ## UI & Stats
 
 #### Starting the game
+```angular2html
+ █▄ ▄█ █ █▄ █ █   ▄▀▀ ▀█▀ ▄▀▄ █▀▄ █▀▄ ██▀ █   █   █ █ ▄▀▄ █   █   ██▀ ▀▄▀
+ █ ▀ █ █ █ ▀█ █   ▄██  █  █▀█ █▀▄ █▄▀ █▄▄ ▀▄▀▄▀   ▀▄▀ █▀█ █▄▄ █▄▄ █▄▄  █ 
+ ----- - ---- -   --- --- --- --- --- --- -----   --- --- --- --- --- ---
+                                      > Code by gettingfunkier in 2025 <3
+
+ ⎯⎯⎯  1. START GAME
+ ⎯⎯⎯  2. Load Save 
+
+> 
+```
+
+```angular2html
+Choose a slot:
+  ├── Save 1: Jimi
+  ├── Save 2: Lily
+  ├── Save 3: 
+  └── Save 4: Rita
+
+> 
+```
+
 ```
 Enter name: Lanzio
 Name your farm: Bahia
@@ -100,7 +122,7 @@ Lanzio: 5178 coins / Level 10 (404/514)
 >
 ```
 ```
-// input 1
+    // input 1
 
 Farming:
   ├── 1. Inspect
@@ -110,25 +132,12 @@ Farming:
 
 0. Return
 > 
-```
-```
-// input 2
+
+    // input 2
 
 Trading:
   ├── 1. Sell
   └── 2. Shop
-
-0. Return
-> 
-```
-```
-// input 6
-
-Choose a slot:
-├── Save 1: Jimi
-├── Save 2: Lily
-├── Save 3
-└── Save 4
 
 0. Return
 > 
