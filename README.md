@@ -29,7 +29,7 @@ mini-stardew-valley/
 │
 ├──── Game           # Main Class
 ├──── GameContent    # (not used)  
-├──── GameState      # Parameters
+├──── GameShell      # Parameters
 │
 ├ saves/
 │

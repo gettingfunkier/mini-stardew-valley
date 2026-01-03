@@ -1,6 +1,6 @@
 package main.java.writers;
 
-import main.java.GameState;
+import main.java.GameShell;
 import main.java.items.Crop;
 import main.java.menus.StartMenu;
 import main.java.menus.SubMenu;
@@ -16,7 +16,7 @@ import java.util.Scanner;
 import static main.java.catalogues.CropCatalogue.getCrops;
 
 public class Start {
-    public static GameState setUp() {
+    public static GameShell setUp() {
 
         Scanner inputMain = new Scanner(System.in);
         StartMenu.startMenu();
@@ -60,7 +60,7 @@ public class Start {
         return saveFile;
     }
 
-    public static GameState startGame(int saveSlot) {
+    public static GameShell startGame(int saveSlot) {
         System.out.println();
 
         Scanner input = new Scanner(System.in);
@@ -76,6 +76,6 @@ public class Start {
 
         ArrayList<Crop> available = getCrops();
 
-        return new GameState(saveSlot, player, farm, shop, calendar, available);
+        return new GameShell(saveSlot, player, farm, shop, calendar, available);
     }
 }
