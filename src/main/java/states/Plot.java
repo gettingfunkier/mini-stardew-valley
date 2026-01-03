@@ -3,6 +3,8 @@ package main.java.states;
 import main.java.enums.PlotState;
 import main.java.items.Crop;
 
+import java.util.ArrayList;
+
 public class Plot {
     private final int plotID;
     private boolean isWatered;
@@ -45,6 +47,10 @@ public class Plot {
     public void clearPlot() {
         this.crop = null;
         this.state = PlotState.EMPTY;
+    }
+
+    public static void clearAllPlots(Farm farm) {
+        farm.clearAllPlots();
     }
 
     public void waterCrop() {
@@ -96,6 +102,16 @@ public class Plot {
                         " ready to harvest!");
                 break;
         }
+    }
+
+    public static ArrayList<Plot> getEmptyPlots(Farm farm) {
+        ArrayList<Plot> emptyPlots = new ArrayList<>();
+        for (Plot plot : farm.getAllPlots()) {
+            if (plot.getCrop() == null) {
+                emptyPlots.add(plot);
+            }
+        }
+        return emptyPlots;
     }
 
 }

@@ -8,7 +8,7 @@ import main.java.states.Plot;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static main.java.Game.listSeasonCrops;
+import static main.java.catalogues.CropCatalogue.listSeasonCrops;
 
 public class PlantInput {
     public boolean execute(Farm farm, Calendar calendar, ArrayList<Plot> emptyPlots, ArrayList<Crop> available, Scanner input) {
@@ -45,9 +45,6 @@ public class PlantInput {
 
     public static boolean checkCropSeason(int cropID, Calendar calendar, ArrayList<Crop> available) {
         Crop crop = available.get(cropID - 1);
-        if (calendar.getSeason().equals(crop.getSeason())) {
-            return true;
-        }
-        return false;
+        return calendar.getSeason().equals(crop.getSeason());
     }
 }

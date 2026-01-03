@@ -1,7 +1,10 @@
 package main.java.menus;
 
+import main.java.states.Calendar;
+import main.java.states.Player;
+
 public abstract class MainMenu {
-    public static void backupMenu() {
+    public static void oldMenu() {
         System.out.println("1. Check plots");
         System.out.println("2. Advance day");
         System.out.println("3. Water");
@@ -16,7 +19,11 @@ public abstract class MainMenu {
         System.out.print("> ");
     }
 
-    public static void defaultMenu() {
+    public static void defaultMenu(Player player, Calendar calendar) {
+        System.out.println();
+        System.out.println("--- [ Day " + calendar.getDay() + " of " + calendar.getSeason() + " ] ---------");
+        System.out.println(player.getName() + ": " + player.getMoney() + " coins / Level " + player.getLevel() + " (" + player.getXp() + "/" + player.getLEVEL_HEAD() +")");
+        System.out.println();
         System.out.println("1. Farming");
         System.out.println("2. Trading");
         System.out.println(" | ");

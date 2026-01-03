@@ -1,56 +1,25 @@
 package main.java;
 
-import main.java.catalogues.CropCatalogue;
 import main.java.inputs.*;
 import main.java.items.Crop;
-import main.java.menus.StartMenu;
 import main.java.menus.SubMenu;
 import main.java.states.*;
-import main.java.menus.MainMenu;
 import main.java.writers.Save;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static main.java.Start.startGame;
-import static main.java.catalogues.CropCatalogue.getCrops;
+import static main.java.Start.setUp;
+import static main.java.menus.MainMenu.defaultMenu;
+import static main.java.states.Plot.clearAllPlots;
 
 public class Game {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
-
-        StartMenu.startMenu();
-        final int start = input.nextInt();
-
-        int saveFile;
-
-        while (true) {
-            SubMenu.savesMenu();
-
-            if (!input.hasNextInt()) {
-                System.out.println();
-                System.out.println("Invalid input!" + "\n");
-                input.next();
-                continue;
-            }
-
-            saveFile = input.nextInt();
-
-            if (saveFile < 1 || saveFile > 4) {
-                System.out.println();
-                System.out.println("Invalid slot! (1 to 4)" + "\n");
-                continue;
-            }
-
-            break;
-        }
-
-        GameState game = startGame();
-        mainMenu(saveFile, game.player, game.farm, game.shop, game.calendar, game.available);
+        GameState game = setUp();
+        mainMenu(game.saveSlot, game.player, game.farm, game.shop, game.calendar, game.available);
 
     }
-
 
 
     public static void mainMenu(int saveFile, Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
@@ -58,13 +27,13 @@ public class Game {
 
         while (true) {
             Scanner input = new Scanner(System.in);
-            printMenu(player, calendar);
+            defaultMenu(player, calendar);
 
             ArrayList<Plot> allPlots = farm.getAllPlots();
-            ArrayList<Plot> emptyPlots = getEmptyPlots(farm);
+            ArrayList<Plot> emptyPlots = Plot.getEmptyPlots(farm);
 
             if (!calendar.getSeason().equals(season)) {
-                changeSeason(farm);
+                clearAllPlots(farm);
                 season = calendar.getSeason();
             }
 
@@ -134,41 +103,6 @@ public class Game {
                 input.nextLine();
             }
         }
-    }
-
-    public static void printMenu(Player player, Calendar calendar) {
-        System.out.println();
-        System.out.println("--- [ Day " + calendar.getDay() + " of " + calendar.getSeason() + " ] ---------");
-        System.out.println(player.getName() + ": " + player.getMoney() + " coins / Level " + player.getLevel() + " (" + player.getXp() + "/" + player.getLEVEL_HEAD() +")");
-        System.out.println();
-        MainMenu.defaultMenu();
-    }
-
-    public static void changeSeason(Farm farm) {
-        farm.clearAllPlots();
-    }
-
-    public static void listSeasonCrops(Calendar calendar) {
-        ArrayList<Crop> available = getCrops();
-        String season = calendar.getSeason();
-        System.out.println("Available Crops:");
-
-        for (int i = 0; i < available.size(); i++) {
-            if (season.equals(available.get(i).getSeason())) {
-                Crop crop = available.get(i);
-                System.out.println((i + 1) + ". " + crop.getName() + " (" + crop.getDaysToGrow() + " days)");
-            }
-        }
-    }
-
-    public static ArrayList<Plot> getEmptyPlots(Farm farm) {
-        ArrayList<Plot> emptyPlots = new ArrayList<>();
-        for (Plot plot : farm.getAllPlots()) {
-            if (plot.getCrop() == null) {
-                emptyPlots.add(plot);
-            }
-        }
-        return emptyPlots;
     }
 
 }

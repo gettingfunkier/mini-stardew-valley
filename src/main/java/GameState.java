@@ -9,13 +9,15 @@ import main.java.states.Shop;
 import java.util.ArrayList;
 
 public class GameState {
+    public int saveSlot;
     public Player player;
     public Farm farm;
     public Shop shop;
     public Calendar calendar;
     public ArrayList<Crop> available;
 
-    public GameState(Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
+    public GameState(int saveFile, Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
+        this.saveSlot = saveFile;
         this.player = player;
         this.farm = farm;
         this.shop = shop;

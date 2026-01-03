@@ -1,6 +1,7 @@
 package main.java.catalogues;
 
 import main.java.items.Crop;
+import main.java.states.Calendar;
 
 import java.util.ArrayList;
 
@@ -29,5 +30,18 @@ public class CropCatalogue {
 
     public static Crop getCrop(int index) {
         return crops.get(index);
+    }
+
+    public static void listSeasonCrops(Calendar calendar) {
+        ArrayList<Crop> available = getCrops();
+        String season = calendar.getSeason();
+        System.out.println("Available Crops:");
+
+        for (int i = 0; i < available.size(); i++) {
+            if (season.equals(available.get(i).getSeason())) {
+                Crop crop = available.get(i);
+                System.out.println((i + 1) + ". " + crop.getName() + " (" + crop.getDaysToGrow() + " days)");
+            }
+        }
     }
 }
