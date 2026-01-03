@@ -1,5 +1,6 @@
-package main.java;
+package main.java.writers;
 
+import main.java.GameState;
 import main.java.items.Crop;
 import main.java.menus.StartMenu;
 import main.java.menus.SubMenu;

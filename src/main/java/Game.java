@@ -9,7 +9,7 @@ import main.java.writers.Save;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static main.java.Start.setUp;
+import static main.java.writers.Start.setUp;
 import static main.java.menus.MainMenu.defaultMenu;
 import static main.java.states.Plot.clearAllPlots;
 
