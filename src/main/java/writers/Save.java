@@ -2,7 +2,7 @@ package main.java.writers;
 
 import main.java.items.Crop;
 import main.java.items.Item;
-import main.java.items.SellableItem;
+import main.java.items.Sellable;
 import main.java.states.*;
 
 import java.io.FileWriter;
@@ -76,9 +76,9 @@ public class Save {
     public static void shopToFile(int SAVE_FILE, Shop shop) {
         try (FileWriter fw = new FileWriter("saves/SAVE_FILE_" + SAVE_FILE + "/shop.sdv")) {
 
-            ArrayList<SellableItem> shopCatalogue = shop.getShopCatalogue();
+            ArrayList<Sellable> shopCatalogue = shop.getShopCatalogue();
 
-            for (SellableItem sellableItem : shopCatalogue) {
+            for (Sellable sellableItem : shopCatalogue) {
                 fw.write(sellableItem.getId() + "," + sellableItem.getPrice() + "," + sellableItem.getQuantity() + "\n");
             }
 

@@ -2,8 +2,7 @@ package main.java;
 
 import main.java.enums.ItemType;
 import main.java.items.Crop;
-import main.java.items.ItemCore;
-import main.java.items.SellableItem;
+import main.java.items.Sellable;
 
 public class GameContent {
     public static void registerCrops() {
@@ -23,8 +22,8 @@ public class GameContent {
     }
 
     public static void registerStartingSellableItems() {
-        new SellableItem("DECOR_rug", "Rug", ItemType.DECOR, 40);
-        new SellableItem("COFFEE_latte", "Latte", ItemType.COFFEE, 255);
-        new SellableItem("WEARABLE_wristwatch", "Wristwatch", ItemType.WEARABLE, 1790);
+        new Sellable("DECOR_rug", "Rug", ItemType.DECOR, 40);
+        new Sellable("COFFEE_latte", "Latte", ItemType.COFFEE, 255);
+        new Sellable("WEARABLE_wristwatch", "Wristwatch", ItemType.WEARABLE, 1790);
     }
 }

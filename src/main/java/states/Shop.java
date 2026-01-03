@@ -2,12 +2,12 @@ package main.java.states;
 
 import main.java.catalogues.ShopCatalogue;
 import main.java.items.Item;
-import main.java.items.SellableItem;
+import main.java.items.Sellable;
 
 import java.util.ArrayList;
 
 public class Shop {
-    private ArrayList<SellableItem> shopCatalogue;
+    private ArrayList<Sellable> shopCatalogue;
 
     public Shop() {
         this.shopCatalogue = ShopCatalogue.getShopCatalogue();
@@ -19,7 +19,7 @@ public class Shop {
         }
 
         int money = player.getMoney();
-        SellableItem item = getItemFromShopCatalogue(itemName);
+        Sellable item = getItemFromShopCatalogue(itemName);
 
         if (item != null) {
             if (item.getPrice() <= money) {
@@ -40,18 +40,18 @@ public class Shop {
         System.out.println("We don't sell that here!");
     }
 
-    public void addItemToShopCatalogue(SellableItem item) {
+    public void addItemToShopCatalogue(Sellable item) {
         shopCatalogue.add(item);
     }
 
     public void printShopCatalogue() {
-        for (SellableItem item : shopCatalogue) {
+        for (Sellable item : shopCatalogue) {
             System.out.println("⤷ " + item.getName() + " for " + item.getPrice() + " coins");
         }
     }
 
-    public SellableItem getItemFromShopCatalogue(String itemName) {
-        for (SellableItem item : shopCatalogue) {
+    public Sellable getItemFromShopCatalogue(String itemName) {
+        for (Sellable item : shopCatalogue) {
             if (item.getName().equals(itemName)) {
                 return item;
             }
@@ -59,7 +59,7 @@ public class Shop {
         return null;
     }
 
-    public ArrayList<SellableItem> getShopCatalogue() {
+    public ArrayList<Sellable> getShopCatalogue() {
         return shopCatalogue;
     }
 }
