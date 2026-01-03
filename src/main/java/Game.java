@@ -12,6 +12,9 @@ import main.java.writers.Save;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static main.java.Start.startGame;
+import static main.java.catalogues.CropCatalogue.getCrops;
+
 public class Game {
     public static void main(String[] args) {
 
@@ -48,24 +51,7 @@ public class Game {
 
     }
 
-    public static GameState startGame() {
-        System.out.println();
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter name: ");
-        String name = input.next();
-        System.out.print("Name your farm: ");
-        String farmName = input.next();
-
-        Player player = new Player(name, 0);
-        Farm farm = new Farm(farmName + " Farm", 5);
-        Shop shop = new Shop();
-        Calendar calendar = new Calendar();
-
-        ArrayList<Crop> available = getCropsList();
-
-        return new GameState(player, farm, shop, calendar, available);
-    }
 
     public static void mainMenu(int saveFile, Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
         String season = calendar.getSeason();
@@ -163,7 +149,7 @@ public class Game {
     }
 
     public static void listSeasonCrops(Calendar calendar) {
-        ArrayList<Crop> available = getCropsList();
+        ArrayList<Crop> available = getCrops();
         String season = calendar.getSeason();
         System.out.println("Available Crops:");
 
@@ -185,7 +171,4 @@ public class Game {
         return emptyPlots;
     }
 
-    public static ArrayList<Crop> getCropsList() {
-        return CropCatalogue.getCrops();
-    }
 }

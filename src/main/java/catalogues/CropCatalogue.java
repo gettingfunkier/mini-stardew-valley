@@ -30,5 +30,4 @@ public class CropCatalogue {
     public static Crop getCrop(int index) {
         return crops.get(index);
     }
-
 }

@@ -4,7 +4,7 @@ import main.java.items.Crop;
 
 import java.util.ArrayList;
 
-import static main.java.Game.getCropsList;
+import static main.java.catalogues.CropCatalogue.getCrops;
 
 public class CropCatalogueInput {
     public void execute() {
@@ -13,7 +13,7 @@ public class CropCatalogueInput {
     }
 
     public static void listCrops() {
-        ArrayList<Crop> available = getCropsList();
+        ArrayList<Crop> available = getCrops();
         System.out.println("Available Crops:");
 
         for (int i = 0; i < available.size(); i++) {
