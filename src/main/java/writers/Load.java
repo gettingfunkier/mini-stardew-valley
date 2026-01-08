@@ -1,12 +1,19 @@
 package main.java.writers;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 
 public class Load {
+
     public static void loadSaveOne() {
+        loadPlayerOne();
+    }
+
+    public static void loadPlayerOne() {
 
         String line;
         String playerName = "";
@@ -15,6 +22,7 @@ public class Load {
         int level = 0;
         int LEVEL_HEAD = 0;
         int inventory_size = 0;
+        ArrayList<String[]> inventory = new ArrayList<>();
 
         try (BufferedReader playerF = Files.newBufferedReader(Path.of("saves/SAVE_FILE_1/player.sdv"))) {
 
@@ -43,10 +51,21 @@ public class Load {
                 if (line.startsWith("inventory_size:")) {
                     inventory_size = Integer.parseInt(line.split(": ")[1]);
                 }
+
+                if (line.startsWith("inventory_item")) {
+                    inventory.add(line.split(": ")[1].split(", "));
+                }
             }
 
-            System.out.println(playerName + ", " + money + " coins, " + xp + " xp, level "
+            System.out.print(playerName + ", " + money + " coins, " + xp + " xp, level "
                     + level + ", head " + LEVEL_HEAD + ", size " + inventory_size);
+
+            for (String[] item : inventory) {
+                System.out.print(", " + item[0]);
+            }
+
+            System.out.println();
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
