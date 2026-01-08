@@ -1,7 +1,7 @@
 package main.java.writers;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,11 +9,11 @@ import java.util.ArrayList;
 
 public class Load {
 
-    public static void loadSaveOne() {
-        loadPlayerOne();
+    public static void loadSave(int slot) {
+        loadPlayer(slot);
     }
 
-    public static void loadPlayerOne() {
+    public static void loadPlayer(int slot) {
 
         String line;
         String playerName = "";
@@ -24,7 +24,7 @@ public class Load {
         int inventory_size = 0;
         ArrayList<String[]> inventory = new ArrayList<>();
 
-        try (BufferedReader playerF = Files.newBufferedReader(Path.of("saves/SAVE_FILE_1/player.sdv"))) {
+        try (BufferedReader playerF = Files.newBufferedReader(Path.of("saves/SAVE_FILE_" + slot + "/player.sdv"))) {
 
             while ((line = playerF.readLine()) != null) {
 
@@ -68,7 +68,7 @@ public class Load {
 
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("File not found!");
         }
     }
 }

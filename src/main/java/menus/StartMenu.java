@@ -13,7 +13,7 @@ public class StartMenu {
         System.out.println(" ⎯⎯⎯  1. START GAME");
         System.out.println(" ⎯⎯⎯  2. Load Save ");
         System.out.println();
-        Load.loadSaveOne();
+        Load.loadSave(1);
         System.out.println();
         System.out.print("> ");
     }
