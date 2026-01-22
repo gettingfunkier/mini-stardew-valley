@@ -226,6 +226,7 @@ Snowfruit - Plant in the Winter, takes 24 days to grow
 ```
 
 ## Roadmap
+- When in submenu, stay in submenu
 - Adding save files (ONGOING)
 - Fishing minigame (somehow)
 - Fixing player/farm name to allow strings with multiple words
