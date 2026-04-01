@@ -1,15 +1,14 @@
 package main.java;
 
-import main.java.inputs.*;
 import main.java.items.Crop;
-import main.java.menus.SubMenu;
+import main.java.run.Shell;
+import main.java.run.Switch;
 import main.java.states.*;
-import main.java.writers.Save;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static main.java.writers.Start.setUp;
+import static main.java.run.Start.setUp;
 import static main.java.menus.MainMenu.defaultMenu;
 import static main.java.states.Plot.clearAllPlots;
 

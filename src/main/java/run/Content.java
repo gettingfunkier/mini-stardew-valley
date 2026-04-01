@@ -1,4 +1,4 @@
-package main.java;
+package main.java.run;
 
 import main.java.enums.ItemType;
 import main.java.items.Crop;
