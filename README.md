@@ -56,7 +56,7 @@ mini-stardew-valley/
 
 #### Actions
 - Plant crops in empty plots
-- Water them every day to grow
+- Water them 9every day to grow
 - Once ready, harvest them
 - Sell them for coins
 

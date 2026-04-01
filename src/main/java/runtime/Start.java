@@ -77,4 +77,9 @@ public class Start {
 
         return new Shell(saveSlot, player, farm, shop, calendar, available);
     }
+
+    public static Shell loadGame(int saveSlot) {
+        System.out.println();
+        
+    }
 }
