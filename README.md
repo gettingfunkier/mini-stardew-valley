@@ -17,16 +17,15 @@ mini-stardew-valley/
 ├────── items/          # CONTAINS ALL ITEM CLASSES
 ├────── menus/          # CONTAINS ALL MENU CLASSES
 ├────── previews/       # CONTAINS ALL PREVIEW CLASSES
+├────── runtime/        # CONTAINS ALL RUNTIME CLASSES
 ├────── states/         # CONTAINS ALL GAME STATE CLASSES
 ├────── writers/        # CONTAINS ALL READ/WRITE CLASSES
 │
 ├──── Game           # Main Class
-├──── Content        # (not used)  
-├──── Shell          # Parameters
 │
 ├ saves/
 │
-├── SAVE_FILE_1/  # slot 1
+├── SAVE_FILE_1/  # slot 1 (expanded to exemplify structure)
 ├──── calendar.sdv   # calendar data
 ├──── farm.sdv       # farm data (incomplete)
 ├──── player.sdv     # player data
@@ -108,8 +107,6 @@ Lanzio: 5178 coins / Level 10 (404/514)
 4. Crop Catalogue
  | 
 5. Advance Day
- | 
-6. Save
 0. Exit
 
 >
