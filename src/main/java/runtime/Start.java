@@ -80,6 +80,6 @@ public class Start {
 
     public static Shell loadGame(int saveSlot) {
         System.out.println();
-        
+        return null;
     }
 }
