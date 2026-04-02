@@ -58,7 +58,7 @@ public class Save {
                 if (!plot.isEmpty()) {
                     Crop crop = plot.getCrop();
                     fw.write("plot_" + i + ": " + plot.getState() + ","
-                                + crop.getId() + ", " + crop.getCurrentDay() + "\n");
+                                + crop.getId() + "," + crop.getCurrentDay() + "\n");
                 }
 
                 else {
