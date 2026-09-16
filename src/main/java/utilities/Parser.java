@@ -17,21 +17,12 @@ public class Parser {
         return parseString(line).split(", ");
     }
 
-    public static int parsePlotID() {
-        String line = "";
-        return line.charAt(5);
+    public static int parsePlotID(String line) {
+        String key = line.split(": ")[0];
+        return Integer.parseInt(key.substring(5));
     }
 
-    public static Crop parsePlotCrop() {
-        // RETURN PLOT CROP
-        String line = "";
-
-        String[] parse = line.split(",");
-        String cropID = parse[1];
-
-        //GET CROP FROM ITEMDICT & CREATE INSTANCE WITH CROPID
-
-        return null;
+    public static String[] parsePlotData(String line) {
+        return parseString(line).split(",");
     }
-
 }

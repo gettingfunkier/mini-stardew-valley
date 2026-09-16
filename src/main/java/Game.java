@@ -18,7 +18,6 @@ public class Game {
     public static void main(String[] args) {
 
         Content.registerItems();
-        
         Shell game = setUp();
         mainMenu(game.saveSlot, game.player, game.farm, game.shop, game.calendar, game.available);
 

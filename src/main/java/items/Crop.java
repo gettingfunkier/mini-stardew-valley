@@ -34,6 +34,11 @@ public class Crop extends Item {
         return currentDay;
     }
 
+    public int setCurrentDay(int currentDay) {
+        this.currentDay = currentDay;
+        return currentDay;
+    }
+
     public void addCurrentDay() {
         currentDay++;
         isReadyToHarvest();

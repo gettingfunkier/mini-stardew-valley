@@ -1,5 +1,7 @@
 package main.java.writers;
 
+import main.java.enums.PlotState;
+import main.java.items.Crop;
 import main.java.items.Item;
 import main.java.runtime.Content;
 import main.java.states.Farm;
@@ -13,6 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
+import static main.java.runtime.Content.getCrop;
 import static main.java.utilities.Parser.*;
 
 public class Load {
@@ -85,41 +88,52 @@ public class Load {
         }
     }
 
-    public static void loadFarm(int slot) {
+    public static Farm loadFarm(int slot) {
 
         String line;
         String farmName = "";
         int capacity = 0;
-
+        Farm farm = null;
 
         try (BufferedReader farmF = Files.newBufferedReader(Path.of("saves/SAVE_FILE_" + slot + "/farm.sdv"))) {
 
             while ((line = farmF.readLine()) != null) {
 
                 if (line.startsWith("name:")) {
-                    farmName = line.split(": ")[1];
+                    farmName = parseString(line);
                 }
 
                 if (line.startsWith("capacity:")) {
-                    capacity = Integer.parseInt(line.split(": ")[1]);
+                    capacity = parseInt(line);
+                    farm = new Farm(farmName, capacity);
                 }
-
-                Farm farm = new Farm(farmName, capacity);
 
                 if (line.startsWith("plot_")) {
 
-                    Plot plot = new Plot(
-                            parsePlotID(),
-                            parsePlotCrop()
-                    );
+                    int plotID = parsePlotID(line);
+                    String[] data = parsePlotData(line);
 
+                    if (!data[0].equals("empty")) {
+                        Crop vessel = Content.getCrop(data[1]);
+
+                        if (vessel != null) {
+                            Crop crop = new Crop(vessel);
+                            crop.setCurrentDay(Integer.parseInt(data[2]));
+
+                            Plot plot = farm.getPlot(plotID);
+                            plot.plantCrop(crop);
+                            plot.setState(PlotState.valueOf(data[0]));
+                        }
+                    }
                 }
             }
 
+            return farm;
+
         } catch (IOException e) {
             System.out.println("File not found!");
+            return null;
         }
-
     }
 
     public static void loadCalendar(int slot) {

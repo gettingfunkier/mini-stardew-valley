@@ -20,6 +20,16 @@ public class Content {
         return itemDict.get(id);
     }
 
+    public static Crop getCrop(String id) {
+        Item item = itemDict.get(id);
+
+        if (item instanceof Crop) {
+            return (Crop) item;
+        }
+
+        return null;
+    }
+
     private static void registerCrops() {
         Crop parsnip = new Crop("CROP_parsnip", "Parsnip", 21, 3, "Spring");
         Crop kale = new Crop("CROP_kale", "Kale", 27, 4, "Spring");

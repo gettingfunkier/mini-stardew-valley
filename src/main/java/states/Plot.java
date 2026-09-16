@@ -22,16 +22,18 @@ public class Plot {
         this.plotID = plotID;
     }
 
+    public Plot(int plotID, Crop crop, PlotState state) {
+        this.plotID = plotID;
+        this.crop = crop;
+        this.state = state;
+    }
+
     public boolean isEmpty() {
         return state == PlotState.EMPTY;
     }
 
     public int getPlotID() {
         return plotID;
-    }
-
-    public void replacePlot() {
-
     }
 
     public void plantCrop(Crop crop) {
@@ -45,6 +47,10 @@ public class Plot {
 
     public PlotState getState() {
         return state;
+    }
+
+    public void setState(PlotState state) {
+        this.state = state;
     }
 
     public void harvestCrop() {
