@@ -13,6 +13,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static main.java.catalogues.CropCatalogue.getCrops;
+import static main.java.runtime.Content.registerItems;
 
 public class Start {
     public static Shell setUp() {

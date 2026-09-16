@@ -1,9 +1,11 @@
 package main.java;
 
 import main.java.items.Crop;
+import main.java.runtime.Content;
 import main.java.runtime.Shell;
 import main.java.runtime.Switch;
 import main.java.states.*;
+import main.java.writers.Load;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,11 +17,12 @@ import static main.java.states.Plot.clearAllPlots;
 public class Game {
     public static void main(String[] args) {
 
+        Content.registerItems();
+        
         Shell game = setUp();
         mainMenu(game.saveSlot, game.player, game.farm, game.shop, game.calendar, game.available);
 
     }
-
 
     public static void mainMenu(int saveFile, Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
         String season = calendar.getSeason();

@@ -18,6 +18,15 @@ public class Player {
         this.inventory = new ArrayList<>();
     }
 
+    public Player(String name, int money, int xp, int level, int LEVEL_HEAD, ArrayList<Item> inventory) {
+        this.name = name;
+        this.money = money;
+        this.xp = xp;
+        this.level = level;
+        this.LEVEL_HEAD = LEVEL_HEAD;
+        this.inventory = inventory;
+    }
+
     public String getName() {
         return name;
     }

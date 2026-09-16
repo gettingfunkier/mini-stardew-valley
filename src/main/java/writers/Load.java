@@ -1,5 +1,11 @@
 package main.java.writers;
 
+import main.java.items.Item;
+import main.java.runtime.Content;
+import main.java.states.Farm;
+import main.java.states.Player;
+import main.java.states.Plot;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,13 +13,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
+import static main.java.utilities.Parser.*;
+
 public class Load {
 
     public static void loadSave(int slot) {
-        loadPlayer(slot);
+        Player player = loadPlayer(slot);
+        loadFarm(slot);
     }
 
-    public static void loadPlayer(int slot) {
+    public static Player loadPlayer(int slot) {
 
         String line;
         String playerName = "";
@@ -22,53 +31,102 @@ public class Load {
         int level = 0;
         int LEVEL_HEAD = 0;
         int inventory_size = 0;
-        ArrayList<String[]> inventory = new ArrayList<>();
+        ArrayList<Item> inventory = new ArrayList<>();
 
         try (BufferedReader playerF = Files.newBufferedReader(Path.of("saves/SAVE_FILE_" + slot + "/player.sdv"))) {
 
             while ((line = playerF.readLine()) != null) {
 
                 if (line.startsWith("name:")) {
-                    playerName = line.split(": ")[1];
+                    playerName = parseString(line);
                 }
 
                 if (line.startsWith("money:")) {
-                    money = Integer.parseInt(line.split(": ")[1]);
+                    money = parseInt(line);
                 }
 
                 if (line.startsWith("xp:")) {
-                    xp = Integer.parseInt(line.split(": ")[1]);
+                    xp = parseInt(line);
                 }
 
                 if (line.startsWith("level:")) {
-                    level = Integer.parseInt(line.split(": ")[1]);
+                    level = parseInt(line);
                 }
 
                 if (line.startsWith("LEVEL_HEAD:")) {
-                    LEVEL_HEAD = Integer.parseInt(line.split(": ")[1]);
+                    LEVEL_HEAD = parseInt(line);
                 }
 
                 if (line.startsWith("inventory_size:")) {
-                    inventory_size = Integer.parseInt(line.split(": ")[1]);
+                    inventory_size = parseInt(line);
                 }
 
                 if (line.startsWith("inventory_item")) {
-                    inventory.add(line.split(": ")[1].split(", "));
+                    String[] parse = parseItem(line);
+                    // parse[0] = "CROP_parsnip"    (id)
+                    // parse[1] = "3"               (quantity)
+
+                    Item vessel = Content.getItem(parse[0]);
+
+                    if (vessel != null) {
+                        Item item = new Item(vessel);
+                        item.setQuantity(Integer.parseInt(parse[1]));
+
+                        inventory.add(item);
+                    }
                 }
             }
 
-            System.out.print(playerName + ", " + money + " coins, " + xp + " xp, level "
-                    + level + ", head " + LEVEL_HEAD + ", size " + inventory_size);
+            return new Player(playerName, money, xp, level, LEVEL_HEAD, inventory);
 
-            for (String[] item : inventory) {
-                System.out.print(", " + item[0]);
+        } catch (IOException e) {
+            System.out.println("File not found!");
+            return null;
+        }
+    }
+
+    public static void loadFarm(int slot) {
+
+        String line;
+        String farmName = "";
+        int capacity = 0;
+
+
+        try (BufferedReader farmF = Files.newBufferedReader(Path.of("saves/SAVE_FILE_" + slot + "/farm.sdv"))) {
+
+            while ((line = farmF.readLine()) != null) {
+
+                if (line.startsWith("name:")) {
+                    farmName = line.split(": ")[1];
+                }
+
+                if (line.startsWith("capacity:")) {
+                    capacity = Integer.parseInt(line.split(": ")[1]);
+                }
+
+                Farm farm = new Farm(farmName, capacity);
+
+                if (line.startsWith("plot_")) {
+
+                    Plot plot = new Plot(
+                            parsePlotID(),
+                            parsePlotCrop()
+                    );
+
+                }
             }
-
-            System.out.println();
-
 
         } catch (IOException e) {
             System.out.println("File not found!");
         }
+
+    }
+
+    public static void loadCalendar(int slot) {
+
+        String line;
+        int day;
+        String season;
+
     }
 }
