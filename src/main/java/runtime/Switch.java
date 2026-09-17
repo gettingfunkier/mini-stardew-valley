@@ -14,10 +14,12 @@ import static main.java.runtime.Start.*;
 public class Switch {
 
 
-    public static void SwitchMain(int saveFile, Scanner input, Player player, Calendar calendar, Farm farm, Shop shop, ArrayList<Plot> allPlots, ArrayList<Plot> emptyPlots, ArrayList<Crop> available) {
+    public static boolean SwitchMain(int saveFile, Scanner input, Player player, Calendar calendar, Farm farm, Shop shop, ArrayList<Plot> allPlots, ArrayList<Plot> emptyPlots, ArrayList<Crop> available) {
+
         int action = input.nextInt();
+        if (action == 0) return false;
+
         switch (action) {
-            case 0: return;
             case 1:
                 SubMenu.farmingMenu();
                 int farmingAction = input.nextInt();
@@ -72,9 +74,12 @@ public class Switch {
                 Save.execute(saveFile, player, calendar, farm, shop);
                 break;
         }
+
+        return true;
     }
 
     public static Shell SwitchStart(Scanner input) {
+
         final int startSwitch = input.nextInt();
         int saveSlot;
 
@@ -89,8 +94,7 @@ public class Switch {
                 saveSlot = defSlot();
                 return loadGame(saveSlot);
         }
-        System.out.println("BROKEN");
-        return null;
 
+        return null;
     }
 }

@@ -38,13 +38,8 @@ public class Game {
                 season = calendar.getSeason();
             }
 
-            try {
-                Switch.SwitchMain(saveFile, input, player, calendar, farm, shop, allPlots, emptyPlots, available);
-            }
-
-            catch (Exception e) {
-                System.out.println("Invalid input!");
-                input.nextLine();
+            if (!Switch.SwitchMain(saveFile, input, player, calendar, farm, shop, allPlots, emptyPlots, available))  {
+                return;
             }
         }
     }

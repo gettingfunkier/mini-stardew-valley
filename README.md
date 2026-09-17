@@ -45,7 +45,7 @@ mini-stardew-valley/
 - When in submenu, stay in submenu
 - Adding save files (ONGOING)
   - Writing classes (Save/Load) implemented ☑️
-  - Check at runtime whether 
+  - Check at runtime for whether player wants to save or load ☑️
 - Fishing minigame (somehow)
 - Fixing player/farm name to allow strings with multiple words
 - Implementing exponential reward system
