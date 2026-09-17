@@ -19,15 +19,16 @@ mini-stardew-valley/
 ├────── previews/       # CONTAINS ALL PREVIEW CLASSES
 ├────── runtime/        # CONTAINS ALL RUNTIME CLASSES
 ├────── states/         # CONTAINS ALL GAME STATE CLASSES
+├────── utilities/      # CONTAINS ALL MISC UTILITY CLASSES
 ├────── writers/        # CONTAINS ALL READ/WRITE CLASSES
 │
 ├──── Game           # Main Class
 │
 ├ saves/
 │
-├── SAVE_FILE_1/  # slot 1 (expanded to exemplify structure)
+├── SAVE_FILE_1/  # slot 1 (expanded)
 ├──── calendar.sdv   # calendar data
-├──── farm.sdv       # farm data (incomplete)
+├──── farm.sdv       # farm data
 ├──── player.sdv     # player data
 ├──── shop.sdv       # shop data (NOT IMPLEMENTED YET!!)
 │
@@ -39,6 +40,16 @@ mini-stardew-valley/
 └ README.md
 ```
 
+
+## Roadmap
+- When in submenu, stay in submenu
+- Adding save files (ONGOING)
+  - Writing classes (Save/Load) implemented ☑️
+  - Check at runtime whether 
+- Fishing minigame (somehow)
+- Fixing player/farm name to allow strings with multiple words
+- Implementing exponential reward system
+- Turn GUI into some sort of interactable (props [@zF4ke](https://github.com/zF4ke))
 
 ## Setup
 
@@ -221,14 +232,6 @@ Pumpkin - Plant in the Fall, takes 11 days to grow
 Amaranth - Plant in the Fall, takes 5 days to grow
 Snowfruit - Plant in the Winter, takes 24 days to grow
 ```
-
-## Roadmap
-- When in submenu, stay in submenu
-- Adding save files (ONGOING)
-- Fishing minigame (somehow)
-- Fixing player/farm name to allow strings with multiple words
-- Implementing exponential reward system
-- Turn GUI into some sort of interactable (props [@zF4ke](https://github.com/zF4ke))
 
 ## Credits
 - Game concept & assets: [**Stardew Valley, ConcernedApe** ↗](https://www.stardewvalley.net/)

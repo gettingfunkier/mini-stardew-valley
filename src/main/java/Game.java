@@ -5,7 +5,6 @@ import main.java.runtime.Content;
 import main.java.runtime.Shell;
 import main.java.runtime.Switch;
 import main.java.states.*;
-import main.java.writers.Load;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -40,7 +39,7 @@ public class Game {
             }
 
             try {
-                Switch.Switch(saveFile, input, player, calendar, farm, shop, allPlots, emptyPlots, available);
+                Switch.SwitchMain(saveFile, input, player, calendar, farm, shop, allPlots, emptyPlots, available);
             }
 
             catch (Exception e) {

@@ -14,24 +14,19 @@ import java.util.Scanner;
 
 import static main.java.catalogues.CropCatalogue.getCrops;
 import static main.java.runtime.Content.registerItems;
+import static main.java.runtime.Switch.SwitchStart;
+import static main.java.writers.Load.*;
 
 public class Start {
     public static Shell setUp() {
 
-        Scanner inputMain = new Scanner(System.in);
         StartMenu.startMenu();
-
-        try {
-            final int start = inputMain.nextInt();
-        } catch(InputMismatchException e) {
-            System.out.println("Invalid input");
-        }
-
-        int saveSlot = defSlot();
-        return startGame(saveSlot);
+        Scanner inputMain = new Scanner(System.in);
+        
+        return SwitchStart(inputMain);
     }
 
-    private static int defSlot() {
+    public static int defSlot() {
 
         int saveFile;
         Scanner inputSlot = new Scanner(System.in);
@@ -69,18 +64,24 @@ public class Start {
         System.out.print("Name your farm: ");
         String farmName = input.next();
 
-        Player player = new Player(name, 100000);
+        Player player = new Player(name, 5);
         Farm farm = new Farm(farmName + " Farm", 5);
-        Shop shop = new Shop();
         Calendar calendar = new Calendar();
+        Shop shop = new Shop();
 
         ArrayList<Crop> available = getCrops();
-
         return new Shell(saveSlot, player, farm, shop, calendar, available);
     }
 
     public static Shell loadGame(int saveSlot) {
         System.out.println();
-        return null;
+
+        Player player = loadPlayer(saveSlot);
+        Farm farm = loadFarm(saveSlot);
+        Calendar calendar = loadCalendar(saveSlot);
+        Shop shop = new Shop();
+
+        ArrayList<Crop> available = getCrops();
+        return new Shell(saveSlot, player, farm, shop, calendar, available);
     }
 }

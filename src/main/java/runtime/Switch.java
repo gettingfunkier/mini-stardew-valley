@@ -9,14 +9,15 @@ import main.java.writers.Save;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static main.java.runtime.Start.*;
+
 public class Switch {
 
 
-    public static void Switch(int saveFile, Scanner input, Player player, Calendar calendar, Farm farm, Shop shop, ArrayList<Plot> allPlots, ArrayList<Plot> emptyPlots, ArrayList<Crop> available) {
+    public static void SwitchMain(int saveFile, Scanner input, Player player, Calendar calendar, Farm farm, Shop shop, ArrayList<Plot> allPlots, ArrayList<Plot> emptyPlots, ArrayList<Crop> available) {
         int action = input.nextInt();
         switch (action) {
-            case 0:
-                return;
+            case 0: return;
             case 1:
                 SubMenu.farmingMenu();
                 int farmingAction = input.nextInt();
@@ -71,5 +72,25 @@ public class Switch {
                 Save.execute(saveFile, player, calendar, farm, shop);
                 break;
         }
+    }
+
+    public static Shell SwitchStart(Scanner input) {
+        final int startSwitch = input.nextInt();
+        int saveSlot;
+
+        switch (startSwitch) {
+            case 0: return null;
+            case 1:
+                System.out.println("SAVE");
+                saveSlot = defSlot();
+                return startGame(saveSlot);
+            case 2:
+                System.out.println("LOAD");
+                saveSlot = defSlot();
+                return loadGame(saveSlot);
+        }
+        System.out.println("BROKEN");
+        return null;
+
     }
 }
