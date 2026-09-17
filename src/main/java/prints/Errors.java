@@ -13,5 +13,5 @@ public class Errors {
         System.out.println("INPUT ERROR: Your input is invalid!");
         System.out.println("[i] ———— Make sure to type within the right type and scope.");
         System.out.print("> ");
-    }4
+    }
 }
