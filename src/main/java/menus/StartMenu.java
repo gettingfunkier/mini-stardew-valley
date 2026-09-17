@@ -11,7 +11,7 @@ public class StartMenu {
         System.out.println("                                      > Code by gettingfunkier in 2025 <3");
         System.out.println();
         System.out.println("                                          		                         ");
-        System.out.println("|                                   .___.__.		                    |");
+        System.out.println("|                                   .___.__.                            |");
         System.out.println("|    / ∖   / ∖   / ∖   / ∖   / ∖   /_____∖__∖	   / ∖   / ∖   / ∖      |");
         System.out.println("|    ∖|/   ∖|/   ∖|/   ∖|/   ∖|/   |  _  |[]|	   ∖|/   ∖|/   ∖|/      |");
         System.out.println("|_____|_____|_____|_____|_____|____| |_| |  |_______|_____|_____|_______|");
