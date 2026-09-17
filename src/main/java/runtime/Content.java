@@ -4,6 +4,7 @@ import main.java.enums.ItemType;
 import main.java.items.Crop;
 import main.java.items.Item;
 import main.java.items.Sellable;
+import main.java.states.Calendar;
 
 import java.util.HashMap;
 
@@ -14,6 +15,25 @@ public class Content {
     public static void registerItems() {
         registerCrops();
         registerStartingSellableItems();
+    }
+
+    public static int registerSeasons(Calendar calendar) {
+        if (calendar == null) return 0;
+        switch (calendar.getSeason()) {
+            case "Spring" -> {
+                return 0;
+            }
+            case "Summer" -> {
+                return 1;
+            }
+            case "Fall" -> {
+                return 2;
+            }
+            case "Winter" -> {
+                return 3;
+            }
+        }
+        return 0;
     }
 
     public static Item getItem(String id) {

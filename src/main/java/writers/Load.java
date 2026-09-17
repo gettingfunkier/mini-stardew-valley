@@ -4,25 +4,25 @@ import main.java.enums.PlotState;
 import main.java.items.Crop;
 import main.java.items.Item;
 import main.java.runtime.Content;
+import main.java.states.Calendar;
 import main.java.states.Farm;
 import main.java.states.Player;
 import main.java.states.Plot;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-import static main.java.runtime.Content.getCrop;
 import static main.java.utilities.Parser.*;
 
 public class Load {
 
     public static void loadSave(int slot) {
-        Player player = loadPlayer(slot);
+        loadPlayer(slot);
         loadFarm(slot);
+        loadCalendar(slot);
     }
 
     public static Player loadPlayer(int slot) {
@@ -136,11 +136,36 @@ public class Load {
         }
     }
 
-    public static void loadCalendar(int slot) {
+    public static Calendar loadCalendar(int slot) {
 
         String line;
-        int day;
-        String season;
+        int day = 1;
+        int year = 1;
+        int seasonIndex = 0;
+
+        try (BufferedReader calendarF = Files.newBufferedReader(Path.of("saves/SAVE_FILE_" + slot + "/calendar.sdv"))) {
+
+            while ((line = calendarF.readLine()) != null) {
+
+                if (line.startsWith("day: ")) {
+                    day = parseInt(line);
+                }
+
+                if (line.startsWith("year: ")) {
+                    year = parseInt(line);
+                }
+
+                if (line.startsWith("seasonIndex: ")) {
+                    seasonIndex = parseInt(line);
+                }
+            }
+
+            return new Calendar(day, year, seasonIndex);
+
+        } catch (IOException e) {
+            System.out.println("File not found!");
+            return null;
+        }
 
     }
 }

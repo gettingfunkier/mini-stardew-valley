@@ -36,7 +36,8 @@ public class Save {
         try (FileWriter fw = new FileWriter("saves/SAVE_FILE_" + SAVE_FILE + "/calendar.sdv")) {
 
             fw.write("day: " + calendar.getDay() + "\n");
-            fw.write("season: " + calendar.getSeason() + "\n");
+            fw.write("year: " + calendar.getYear() + "\n");
+            // fw.write("season: " + calendar.getSeason() + "\n");   <---- REMOVE THIS IF LOADCALENDAR WORKS
             fw.write("seasonIndex: " + calendar.getSeasonIndex() + "\n");
 
         } catch (IOException e) {

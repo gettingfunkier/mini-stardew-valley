@@ -14,6 +14,13 @@ public class Calendar {
         this.season = seasons[seasonIndex];
     }
 
+    public Calendar(int day, int year, int seasonIndex) {
+        this.day = day;
+        this.year = year;
+        this.seasonIndex = seasonIndex;
+        this.season = seasons[seasonIndex];
+    }
+
     public void advanceDay() {
         day++;
         if (day > 28) {
@@ -38,6 +45,10 @@ public class Calendar {
 
     public int getDay() {
         return day;
+    }
+
+    public int getYear() {
+        return year;
     }
 
     public String getSeason() {
