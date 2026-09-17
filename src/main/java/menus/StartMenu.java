@@ -10,9 +10,16 @@ public class StartMenu {
         System.out.println(" ----- - ---- -   --- --- --- --- --- --- -----   --- --- --- --- --- ---");
         System.out.println("                                      > Code by gettingfunkier in 2025 <3");
         System.out.println();
+        System.out.println("                                          		                         ");
+        System.out.println("|                                   .___.__.		                    |");
+        System.out.println("|    / ∖   / ∖   / ∖   / ∖   / ∖   /_____∖__∖	   / ∖   / ∖   / ∖      |");
+        System.out.println("|    ∖|/   ∖|/   ∖|/   ∖|/   ∖|/   |  _  |[]|	   ∖|/   ∖|/   ∖|/      |");
+        System.out.println("|_____|_____|_____|_____|_____|____| |_| |  |_______|_____|_____|_______|");
+        System.out.println();
         System.out.println(" ⎯⎯⎯  1. START GAME");
         System.out.println(" ⎯⎯⎯  2. Load Save ");
         System.out.println();
+        System.out.println(" ⎯⎯⎯  0. Exit");
         System.out.println();
         System.out.print("> ");
     }

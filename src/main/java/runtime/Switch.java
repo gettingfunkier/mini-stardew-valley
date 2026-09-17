@@ -9,6 +9,8 @@ import main.java.writers.Save;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static main.java.prints.Errors.PrintExceptionError;
+import static main.java.prints.Errors.PrintInputError;
 import static main.java.runtime.Start.*;
 
 public class Switch {
@@ -80,19 +82,30 @@ public class Switch {
 
     public static Shell SwitchStart(Scanner input) {
 
-        final int startSwitch = input.nextInt();
-        int saveSlot;
+        boolean check = false;
 
-        switch (startSwitch) {
-            case 0: return null;
-            case 1:
-                System.out.println("SAVE");
-                saveSlot = defSlot();
-                return startGame(saveSlot);
-            case 2:
-                System.out.println("LOAD");
-                saveSlot = defSlot();
-                return loadGame(saveSlot);
+        while (!check) {
+            try {
+                final int startSwitch = input.nextInt();
+                int saveSlot;
+
+                switch (startSwitch) {
+                    case 0: System.exit(0); break;
+                    case 1:
+                        check = true;
+                        saveSlot = defSlot();
+                        return startGame(saveSlot);
+                    case 2:
+                        check = true;
+                        saveSlot = defSlot();
+                        return loadGame(saveSlot);
+                }
+                PrintInputError();
+            }
+            catch (Exception e) {
+                PrintInputError();
+                input.nextLine();
+            }
         }
 
         return null;

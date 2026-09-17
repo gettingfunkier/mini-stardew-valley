@@ -17,6 +17,7 @@ mini-stardew-valley/
 ├────── items/          # CONTAINS ALL ITEM CLASSES
 ├────── menus/          # CONTAINS ALL MENU CLASSES
 ├────── previews/       # CONTAINS ALL PREVIEW CLASSES
+├────── prints/         # CONTAINS ALL PRINTING CLASSES
 ├────── runtime/        # CONTAINS ALL RUNTIME CLASSES
 ├────── states/         # CONTAINS ALL GAME STATE CLASSES
 ├────── utilities/      # CONTAINS ALL MISC UTILITY CLASSES
