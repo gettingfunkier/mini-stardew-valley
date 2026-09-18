@@ -44,6 +44,7 @@ mini-stardew-valley/
 
 ## Roadmap
 - When in submenu, stay in submenu
+- Uniform all printing statements throughout the code into the printing/ class
 - Adding save files (ONGOING)
   - Writing classes (Save/Load) implemented ☑️
   - Check at runtime for whether player wants to save or load ☑️
