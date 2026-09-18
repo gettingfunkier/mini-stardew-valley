@@ -16,7 +16,6 @@ import static main.java.states.Plot.clearAllPlots;
 
 public class Switch {
 
-
     public static boolean SwitchMain(int saveFile, Scanner input, Player player, Calendar calendar, String season, Farm farm, Shop shop, ArrayList<Plot> allPlots, ArrayList<Plot> emptyPlots, ArrayList<Crop> available) {
 
         int action = input.nextInt();

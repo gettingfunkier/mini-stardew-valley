@@ -11,7 +11,7 @@ public class StartMenu {
         System.out.println("  █▄ ▄█ █ █▄ █ █   ▄▀▀ ▀█▀ ▄▀▄ █▀▄ █▀▄ ██▀ █   █   █ █ ▄▀▄ █   █   ██▀ ▀▄▀  ");
         System.out.println("  █ ▀ █ █ █ ▀█ █   ▄██  █  █▀█ █▀▄ █▄▀ █▄▄ ▀▄▀▄▀   ▀▄▀ █▀█ █▄▄ █▄▄ █▄▄  █   ");
         System.out.println("  ----- - ---- -   --- --- --- --- --- --- -----   --- --- --- --- --- ---  ");
-        System.out.println("░                                      > Code by gettingfunkier in 2025 <3  ");
+        System.out.println("                                               > Code by gettingfunkier <3  ");
         System.out.println("░░░░░░░░░░░░░░░░░░░                                                         ");
         System.out.println("░░░░░░  ░░  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                          ");
         System.out.println("░░░░░░  ░░  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
