@@ -73,10 +73,17 @@ public class Player {
     public void removeItem(Item item, int quantity) {
         if (hasItemInInventory(item)) {
             int newQuantity = item.getQuantity() - quantity;
-            item.setQuantity(newQuantity);
+            
+            if (newQuantity == 0) inventory.remove(item);
+            else item.setQuantity(newQuantity);
+
             return;
         }
         System.out.println("You don't have any " + item.getName() + " in your inventory");
+    }
+
+    public void clearItem(Item item) {
+        inventory.remove(item);
     }
 
     public void clearInventory() {
