@@ -23,7 +23,7 @@ public class Save {
 
             for (int i = 0; i < player.getInventory().size(); i++) {
                 Item item = player.getInventory().get(i);
-                fw.write("inventory_item_" + i + ": " + item.getId() + "," + item.getQuantity() + "\n");
+                fw.write("inventory_item_" + i + ": " + item.getId() + ", " + item.getQuantity() + "\n");
             }
 
         } catch (IOException e) {
