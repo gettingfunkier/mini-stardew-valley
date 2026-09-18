@@ -55,6 +55,10 @@ public class Player {
         return inventory.size();
     }
 
+    public boolean hasItemInInventory(Item item) {
+        return inventory.contains(item);
+    }
+
     public void addItem(Item newItem) {
         for (Item item : inventory) {
             if (item.getName().equalsIgnoreCase(newItem.getName())) {
@@ -67,9 +71,12 @@ public class Player {
     }
 
     public void removeItem(Item item, int quantity) {
-        for (int i = 0; i <= quantity; i++) {
-            this.inventory.remove(item);
+        if (hasItemInInventory(item)) {
+            int newQuantity = item.getQuantity() - quantity;
+            item.setQuantity(newQuantity);
+            return;
         }
+        System.out.println("You don't have any " + item.getName() + " in your inventory");
     }
 
     public void clearInventory() {

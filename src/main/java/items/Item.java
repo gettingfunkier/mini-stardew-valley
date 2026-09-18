@@ -25,6 +25,7 @@ public class Item extends ItemCore {
     public String getName() {
         return name;
     }
+
     public int getQuantity() {
         return quantity;
     }

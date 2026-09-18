@@ -16,6 +16,12 @@ public class SellInput {
         String itemName = input.next();
         System.out.print("Quantity: ");
         int quantity = input.nextInt();
+        while (quantity <= 0) {
+            System.out.println();
+            System.out.println("Quantity must be greater than zero!");
+            System.out.print("Quantity: ");
+            quantity = input.nextInt();
+        }
         sellItem(player, itemName, quantity);
         player.addXp(90);
     }
