@@ -78,7 +78,7 @@ public class Switch {
                 if (!calendar.getSeason().equals(season)) {
                     clearAllPlots(farm);
                 }
-                
+
                 Save.execute(saveFile, player, calendar, farm, shop);
                 break;
         }
