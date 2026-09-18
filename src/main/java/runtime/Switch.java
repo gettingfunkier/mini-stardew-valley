@@ -12,11 +12,12 @@ import java.util.Scanner;
 import static main.java.prints.Errors.PrintExceptionError;
 import static main.java.prints.Errors.PrintInputError;
 import static main.java.runtime.Start.*;
+import static main.java.states.Plot.clearAllPlots;
 
 public class Switch {
 
 
-    public static boolean SwitchMain(int saveFile, Scanner input, Player player, Calendar calendar, Farm farm, Shop shop, ArrayList<Plot> allPlots, ArrayList<Plot> emptyPlots, ArrayList<Crop> available) {
+    public static boolean SwitchMain(int saveFile, Scanner input, Player player, Calendar calendar, String season, Farm farm, Shop shop, ArrayList<Plot> allPlots, ArrayList<Plot> emptyPlots, ArrayList<Crop> available) {
 
         int action = input.nextInt();
         if (action == 0) return false;
@@ -73,6 +74,11 @@ public class Switch {
             case 5:
                 AdvanceDayInput advancingDay = new AdvanceDayInput();
                 advancingDay.execute(farm, player, calendar);
+
+                if (!calendar.getSeason().equals(season)) {
+                    clearAllPlots(farm);
+                }
+                
                 Save.execute(saveFile, player, calendar, farm, shop);
                 break;
         }

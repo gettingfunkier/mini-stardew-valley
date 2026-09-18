@@ -29,22 +29,19 @@ public class Game {
     }
 
     public static void mainMenu(int saveFile, Player player, Farm farm, Shop shop, Calendar calendar, ArrayList<Crop> available) {
-        String season = calendar.getSeason();
+        String season;
 
         while (true) {
             try {
                 Scanner input = new Scanner(System.in);
                 defaultMenu(player, calendar);
 
+                season = calendar.getSeason();
+
                 ArrayList<Plot> allPlots = farm.getAllPlots();
                 ArrayList<Plot> emptyPlots = Plot.getEmptyPlots(farm);
 
-                if (!calendar.getSeason().equals(season)) {
-                    clearAllPlots(farm);
-                    season = calendar.getSeason();
-                }
-
-                if (!Switch.SwitchMain(saveFile, input, player, calendar, farm, shop, allPlots, emptyPlots, available)) {
+                if (!Switch.SwitchMain(saveFile, input, player, calendar, season, farm, shop, allPlots, emptyPlots, available)) {
                     System.exit(0);
                 }
             }
