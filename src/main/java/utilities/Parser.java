@@ -1,8 +1,5 @@
 package main.java.utilities;
 
-import main.java.items.Crop;
-import main.java.items.Item;
-
 public class Parser {
 
     public static String parseString(String line) {

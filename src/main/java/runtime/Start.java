@@ -9,11 +9,9 @@ import main.java.states.Player;
 import main.java.states.Shop;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static main.java.catalogues.CropCatalogue.getCrops;
-import static main.java.runtime.Content.registerItems;
 import static main.java.runtime.Switch.SwitchStart;
 import static main.java.writers.Load.*;
 
@@ -52,6 +50,7 @@ public class Start {
             break;
         }
 
+        inputSlot.close();
         return saveFile;
     }
 
@@ -68,6 +67,8 @@ public class Start {
         Farm farm = new Farm(farmName + " Farm", 5);
         Calendar calendar = new Calendar();
         Shop shop = new Shop();
+
+        input.close();
 
         ArrayList<Crop> available = getCrops();
         return new Shell(saveSlot, player, farm, shop, calendar, available);

@@ -12,7 +12,6 @@ import java.util.Scanner;
 import static main.java.prints.Errors.PrintExceptionError;
 import static main.java.runtime.Start.setUp;
 import static main.java.menus.MainMenu.defaultMenu;
-import static main.java.states.Plot.clearAllPlots;
 
 public class Game {
     public static void main(String[] args) {

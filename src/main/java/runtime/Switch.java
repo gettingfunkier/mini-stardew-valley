@@ -9,7 +9,6 @@ import main.java.writers.Save;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static main.java.prints.Errors.PrintExceptionError;
 import static main.java.prints.Errors.PrintInputError;
 import static main.java.runtime.Start.*;
 import static main.java.states.Plot.clearAllPlots;

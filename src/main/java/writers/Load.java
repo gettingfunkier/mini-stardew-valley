@@ -33,7 +33,7 @@ public class Load {
         int xp = 0;
         int level = 0;
         int LEVEL_HEAD = 0;
-        int inventory_size = 0;
+
         ArrayList<Item> inventory = new ArrayList<>();
 
         try (BufferedReader playerF = Files.newBufferedReader(Path.of("saves/SAVE_FILE_" + slot + "/player.sdv"))) {
@@ -58,10 +58,6 @@ public class Load {
 
                 if (line.startsWith("LEVEL_HEAD:")) {
                     LEVEL_HEAD = parseInt(line);
-                }
-
-                if (line.startsWith("inventory_size:")) {
-                    inventory_size = parseInt(line);
                 }
 
                 if (line.startsWith("inventory_item")) {
