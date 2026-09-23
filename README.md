@@ -60,6 +60,7 @@ mini-stardew-valley/
 - Adding save files (ONGOING)
   - Writing classes (Save/Load) implemented ☑️
   - Check at runtime for whether player wants to save or load ☑️
+  - fix bug for loading empty files
 - Fishing minigame (somehow)
 - Fixing player/farm name to allow strings with multiple words
 - Implementing exponential reward system
