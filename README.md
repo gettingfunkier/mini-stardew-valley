@@ -64,6 +64,8 @@ mini-stardew-valley/
 - Fixing player/farm name to allow strings with multiple words
 - Implementing exponential reward system
 - Turn GUI into some sort of interactable (props [@zF4ke](https://github.com/zF4ke))
+- New items in shop for higher levels
+- Crows that ruin your crops
 
 ## How to play
 
