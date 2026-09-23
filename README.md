@@ -3,6 +3,18 @@
 
 > A friend convinced me to play ConcernedApe's Stardew Valley. I quickly fell in love and grinded my farm all the way to Year 3, levelled all abilities to 10, and built a cosy farm. I loved it so much I felt compelled to develop a mini fan version for myself, and that's what this is! A mini, terminal Stardew Valley.
 
+## Setup
+
+1. Clone this repo: (or upload the src classes into a java project)
+   ```bash
+   git clone https://github.com/gettingfunkier/mini-stardew-valley.git
+   cd mini-stardew-valley/
+2. Run with Java:
+   ```bash
+   javac -d out $(find src/main/java -name "*.java")
+   java src/main/java/Game.java
+   ```
+
 ## Directory
 
 ```bash
@@ -52,18 +64,6 @@ mini-stardew-valley/
 - Fixing player/farm name to allow strings with multiple words
 - Implementing exponential reward system
 - Turn GUI into some sort of interactable (props [@zF4ke](https://github.com/zF4ke))
-
-## Setup
-
-1. Clone this repo: (or upload the src classes into a java project)
-   ```bash
-   git clone https://github.com/gettingfunkier/mini-stardew-valley.git
-   cd mini-stardew-valley/
-2. Run with Java:
-   ```bash
-   javac -d out $(find src/main/java -name "*.java")
-   java src/main/java/Game.java
-   ```
 
 ## How to play
 
